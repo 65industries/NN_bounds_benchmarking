@@ -49,7 +49,7 @@ See the [README](../README.md) for installation and full/smoke matrices. One row
 
 Each run contains a source/checkpoint snapshot, manifest, fresh row logs, full-precision JSON, per-cell NPZ arrays, diagnostics, execution exit codes and a completion record. A failure has no successful completion record. Reusing or overwriting an output directory is rejected.
 
-`verify` checks all published artifact hashes, model identity, exact complete-cover geometry, reduction identities, independently expanded ordered Q1 moments, every numerical table cell and relative link. `check-run` is a separate post-computation comparison: it checks native arrays and numerical reductions with predeclared `rtol=2e-12`, `atol=5e-13`, reports bitwise equality separately, and does not compare elapsed/CPU times.
+`verify` checks all published artifact hashes, model identity, exact complete-cover geometry, reduction identities, independently expanded ordered Q1 moments, every numerical table cell and relative link. `check-run` is a separate post-computation comparison: it resolves baselines only from the canonical release registry, enforces a complete declared matrix, verifies frozen sources, checkpoint/dtype/reference contracts, worker exit records and sealed fresh artifacts, and rejects retained diagnostic failures. It then checks native arrays and numerical reductions with predeclared `rtol=2e-12`, `atol=5e-13`, reports bitwise equality separately, and does not compare elapsed/CPU times.
 
 ## Timing and qualification
 

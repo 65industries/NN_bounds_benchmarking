@@ -14,6 +14,9 @@ import shutil
 import subprocess
 import sys
 
+if not __debug__:
+    raise RuntimeError('Do not disable the reproduction integrity checks with Python -O')
+
 ROOT = Path(__file__).resolve().parents[1]
 CHECKPOINT = 'model_weights/heat_1d_separable_L2_W128_netbounds.pt'
 CHECKPOINT_SHA = 'fb1f6f1d8dc628c84f561a05b0f5c9b2ef1537d93be4fac8c427f13c722efb68'
@@ -115,6 +118,8 @@ def launch(output, selected, acknowledge_expensive=False):
         verify_vendor(component)
     if any(r['method'].startswith('partial-crown') and r['n'] >= 64 for r in selected) and not acknowledge_expensive:
         raise ValueError('Fine partial-CROWN grids can take tens of minutes; add --acknowledge-expensive')
+    from .run_contract import selection_for, artifact_paths
+    selection = selection_for(selected, cases())
     output = Path(output).resolve()
     if output.is_relative_to(ROOT / 'results') or output == ROOT:
         raise ValueError('Use a new runs/ or external directory; published evidence is immutable')
@@ -128,7 +133,7 @@ def launch(output, selected, acknowledge_expensive=False):
         if digest(destination) != expected:
             raise RuntimeError(f'Source changed while freezing: {rel}')
     write_json(output / 'manifest.json', dict(
-        cases=selected, source_sha256=inventory, checkpoint_sha256=CHECKPOINT_SHA,
+        cases=selected, selection=selection, source_sha256=inventory, checkpoint_sha256=CHECKPOINT_SHA,
         versions=versions, python=sys.version, started_utc=datetime.now(timezone.utc).isoformat(),
         timing='Measured fresh; archived CPU measurements are not recomputed or reused.',
         independent_rows=True, threads=1, numerical_inputs='Frozen code and selected checkpoint only'))
@@ -149,7 +154,8 @@ def launch(output, selected, acknowledge_expensive=False):
         print(case['case_id'] + ': complete', flush=True)
     if any(digest(snapshot / rel) != sha for rel, sha in inventory.items()):
         raise RuntimeError('Frozen source changed during computation')
-    write_json(output / 'complete.json', dict(case_count=len(selected),
+    artifacts = {relative: digest(output / relative) for relative in artifact_paths(selected)}
+    write_json(output / 'complete.json', dict(case_count=len(selected), artifact_sha256=artifacts,
         completed_utc=datetime.now(timezone.utc).isoformat(), sources_unchanged=True))
 
 
@@ -157,13 +163,11 @@ def compare_run(output):
     """Post-computation comparison only; no baseline is read by numerical workers."""
     import numpy as np
     output = Path(output)
-    manifest = json.loads((output / 'manifest.json').read_text())
-    complete = json.loads((output / 'complete.json').read_text())
-    if complete['case_count'] != len(manifest['cases']):
-        raise ValueError('Incomplete run')
+    from .run_contract import validate_run
+    selected, diagnostics = validate_run(output)
     array_count = 0
     all_bitwise = True
-    for case in manifest['cases']:
+    for case in selected:
         baseline = ROOT / case['result_path']
         new = output / 'rows' / case['case_id']
         a, b = json.loads(baseline.read_text()), json.loads((new / 'result.json').read_text())
@@ -188,7 +192,8 @@ def compare_run(output):
                                                    err_msg=case['case_id'] + ':' + key)
                         all_bitwise = all_bitwise and np.array_equal(actual[key], expected[key])
                         array_count += 1
-    answer = dict(compared_rows=len(manifest['cases']), compared_arrays=array_count,
+    answer = dict(compared_rows=len(selected), compared_arrays=array_count,
+                  provenance_verified=True, diagnostics=diagnostics,
                   all_arrays_bitwise_equal=all_bitwise, rtol=REPLAY_RTOL, atol=REPLAY_ATOL,
                   cpu_times_compared=False)
     print(json.dumps(answer, indent=2))

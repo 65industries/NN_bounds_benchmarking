@@ -12,7 +12,7 @@ Results:
 |---|---|
 | Published evidence/table audit | 60 computations: 55 bounds, 5 references; 175 artifacts verified |
 | Complete saved-cell geometry/reductions | 179,968 bound cells checked |
-| Regression suite | **79 passed** |
+| Regression suite | **94 passed**, including fresh-run authority/provenance mutation tests |
 | Fresh-process smoke | **17 computations; 140 saved arrays bitwise identical** to measured evidence |
 | Full NetBounds matrix plus references | **40 computations; 369 saved arrays bitwise identical** to measured evidence |
 | All published affine integrals | 16,320 saved cells replayed through the existing corrected integrator; compared with the older independent polygon implementation |
@@ -22,6 +22,10 @@ Results:
 | Diff hygiene | Passed; upstream whitespace deliberately preserved via vendor attributes |
 
 The repeated smoke/reference cases are not additional independent scientific measurements for the report. Recomputed CPU times were **not** substituted for the published ones.
+
+## Verification-gate hardening
+
+Independent review found that an earlier `check-run` trusted run-supplied baseline paths and omitted fresh provenance checks. Mutation tests first reproduced these failures. The gate now resolves baselines exclusively from the canonical registry; rejects empty, duplicate, unknown or incomplete matrices; verifies frozen source hashes, successful worker execution, checkpoint/dtype/reference policies and sealed fresh artifacts; and refuses to call diagnostic failures a validated reproduction. The numerical workers and published measurements are unchanged.
 
 ## Limits
 
