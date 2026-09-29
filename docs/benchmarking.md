@@ -14,7 +14,7 @@ The NetBounds direct-E2 column evaluates **exactly the requested second-order qu
 
 ```math
 \mathcal E_F^{2e_i}(y,\boldsymbol\varepsilon)
-=|F_{ii}(y)|+\mathrm{Alg}_2(2e_i,F,y,\boldsymbol\varepsilon).\tag{1}
+=|F_{ii}(y)|+\mathrm{Alg}_2(2e_i,F,y,\boldsymbol\varepsilon).\qquad (1)
 ```
 
 It does not use the existing benchmark's Q1 affine model or its fourth-network-derivative remainder.
@@ -144,7 +144,7 @@ The coordinate tuple in this formula denotes the fourth partial derivative; it i
 
 ```math
 U_i^{\mathrm{Q1}}(n)=\max_C\left(|F_{ii}(y_C)|+\sum_q\varepsilon_q|F_{iiq}(y_C)|+
-\frac12\sum_{q,r}\varepsilon_q\varepsilon_rH^{(i)}_{qr,C}\right).\tag{2}
+\frac12\sum_{q,r}\varepsilon_q\varepsilon_rH^{(i)}_{qr,C}\right).\qquad (2)
 ```
 
 Both ordered mixed terms are included. This is a pointwise supremum enclosure, not Q1 moment integration or an $`L^2`$ bound. Its exact-arithmetic covering argument is the same as above; the float64 qualification remains unchanged.
