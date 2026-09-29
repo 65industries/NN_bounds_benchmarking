@@ -8,9 +8,9 @@ The targets are $`F_{00}=\partial_x^2 F`$ and $`F_{11}=\partial_t^2 F`$, with ze
 The supremum targets are not derivatives of the boundary-masked function $`x(1-x)F`$ or PDE residuals. A separate $`L^2`$ section below also bounds the integral norms of $`F`$, $`F_{00}`$ and $`F_{11}`$ on the same cells.
 The model is $`2\to128\to128\to1`$, with two tanh hidden layers and an affine output.
 
-The NetBounds direct-E2 column evaluates **exactly the requested second-order quantity**
+The NetBounds $`\mathcal E_F^{2e_i}`$ column evaluates **exactly the requested second-order quantity**
 
-<a id="direct-e2-definition"></a>
+<a id="mathcal-e-definition"></a>
 
 ```math
 \mathcal E_F^{2e_i}(y,\boldsymbol\varepsilon)
@@ -35,8 +35,8 @@ Thus there are $`n^2`$ cells, with disjoint interiors, covering the entire close
 The half-width vectors are $`(1/16,1/16)`$, $`(1/32,1/32)`$, $`(1/64,1/64)`$ and $`(1/128,1/128)`$ for $`n=8,16,32,64`$.
 For $`n=128`$, each radius is $`1/256`$, with 16,384 cells per derivative. All these cell coordinates are exactly representable in binary64.
 
-Direct E2 returns a centre derivative $`b_{i,C}=F_{ii}(y_C)`$ and a variation radius $`r_{i,C}=\mathrm{Alg}_2(2e_i,F,y_C,\boldsymbol\varepsilon)`$.
-The reported direct-E2 number is
+The $`\mathcal E_F^{2e_i}`$ evaluation returns a centre derivative $`b_{i,C}=F_{ii}(y_C)`$ and a variation radius $`r_{i,C}=\mathrm{Alg}_2(2e_i,F,y_C,\boldsymbol\varepsilon)`$.
+The reported $`\mathcal E_F^{2e_i}`$ bound is
 
 ```math
 U_i^{\mathrm{NB}}(n)=\max_C\bigl(|b_{i,C}|+r_{i,C}\bigr).
@@ -78,13 +78,13 @@ Each bound row is one fresh Python process and one complete computation, without
 
 **Bound results**
 
-| n | Cells | $`\mathcal E_F^{2e_0}`$ bound [(1)](#direct-e2-definition) | $`\mathcal E_F^{2e_0}`$ CPU (s) | 4th-order expansion bound [(2)](#fourth-order-expansion-definition) | 4th-order expansion CPU (s) | ∂-CROWN bound | ∂-CROWN CPU (s) | Evidence |
+| n | Cells | $`\mathcal E_F^{2e_0}`$ bound [(1)](#mathcal-e-definition) | $`\mathcal E_F^{2e_0}`$ CPU (s) | 4th-order expansion bound [(2)](#fourth-order-expansion-definition) | 4th-order expansion CPU (s) | ∂-CROWN bound | ∂-CROWN CPU (s) | Evidence |
 |---:|---:|---:|---:|---:|---:|---:|---:|:---|
-| 8 | 64 | 85.0817253698 | 0.007142 | 785.061956724 | 0.045224 | 7.8848853014 | 7.285417 | [E2](../results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F00-n8/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n8/result.json), [∂C](../results/heat-second-order-e2-20260928-v1/rows/partial-crown-F00-n8/result.json) |
-| 16 | 256 | 8.6065342782 | 0.028384 | 27.3197255233 | 0.170797 | 7.48620263895 | 30.234633 | [E2](../results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F00-n16/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n16/result.json), [∂C](../results/heat-second-order-e2-20260928-v1/rows/partial-crown-F00-n16/result.json) |
-| 32 | 1024 | 7.536663073 | 0.120274 | 7.47837323623 | 0.600595 | 7.29853796412 | 114.095469 | [E2](../results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F00-n32/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n32/result.json), [∂C](../results/heat-second-order-e2-20260928-v1/rows/partial-crown-F00-n32/result.json) |
-| 64 | 4096 | 7.35579090334 | 0.538130 | 7.23645926946 | 2.461712 | 7.24043006652 | 444.512232 | [E2](../results/heat-second-order-e2-n64-20260928-v1/rows/netbounds-e2-F00-n64/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n64/result.json), [∂C](../results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-F00-n64/result.json) |
-| 128 | 16384 | 7.28605283969 | 3.729450 | 7.22384190433 | 9.793249 | not run | — | [E2](../results/heat-second-order-e2-n128-20260928-v1/rows/netbounds-e2-F00-n128/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n128/result.json) |
+| 8 | 64 | 85.0817253698 | 0.007142 | 785.061956724 | 0.045224 | 7.8848853014 | 7.285417 | [$`\mathcal E_F^{2e_0}`$](../results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F00-n8/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n8/result.json), [∂C](../results/heat-second-order-e2-20260928-v1/rows/partial-crown-F00-n8/result.json) |
+| 16 | 256 | 8.6065342782 | 0.028384 | 27.3197255233 | 0.170797 | 7.48620263895 | 30.234633 | [$`\mathcal E_F^{2e_0}`$](../results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F00-n16/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n16/result.json), [∂C](../results/heat-second-order-e2-20260928-v1/rows/partial-crown-F00-n16/result.json) |
+| 32 | 1024 | 7.536663073 | 0.120274 | 7.47837323623 | 0.600595 | 7.29853796412 | 114.095469 | [$`\mathcal E_F^{2e_0}`$](../results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F00-n32/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n32/result.json), [∂C](../results/heat-second-order-e2-20260928-v1/rows/partial-crown-F00-n32/result.json) |
+| 64 | 4096 | 7.35579090334 | 0.538130 | 7.23645926946 | 2.461712 | 7.24043006652 | 444.512232 | [$`\mathcal E_F^{2e_0}`$](../results/heat-second-order-e2-n64-20260928-v1/rows/netbounds-e2-F00-n64/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n64/result.json), [∂C](../results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-F00-n64/result.json) |
+| 128 | 16384 | 7.28605283969 | 3.729450 | 7.22384190433 | 9.793249 | not run | — | [$`\mathcal E_F^{2e_0}`$](../results/heat-second-order-e2-n128-20260928-v1/rows/netbounds-e2-F00-n128/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n128/result.json) |
 
 ### $`F_{11}`$
 
@@ -96,19 +96,19 @@ Each bound row is one fresh Python process and one complete computation, without
 
 **Bound results**
 
-| n | Cells | $`\mathcal E_F^{2e_1}`$ bound [(1)](#direct-e2-definition) | $`\mathcal E_F^{2e_1}`$ CPU (s) | 4th-order expansion bound [(2)](#fourth-order-expansion-definition) | 4th-order expansion CPU (s) | ∂-CROWN bound | ∂-CROWN CPU (s) | Evidence |
+| n | Cells | $`\mathcal E_F^{2e_1}`$ bound [(1)](#mathcal-e-definition) | $`\mathcal E_F^{2e_1}`$ CPU (s) | 4th-order expansion bound [(2)](#fourth-order-expansion-definition) | 4th-order expansion CPU (s) | ∂-CROWN bound | ∂-CROWN CPU (s) | Evidence |
 |---:|---:|---:|---:|---:|---:|---:|---:|:---|
-| 8 | 64 | 69.9055951591 | 0.007271 | 646.566696849 | 0.041912 | 5.57734284696 | 7.876738 | [E2](../results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F11-n8/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n8/result.json), [∂C](../results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n8/result.json) |
-| 16 | 256 | 7.67279263582 | 0.027784 | 23.3227524317 | 0.172013 | 5.23280665598 | 30.230704 | [E2](../results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F11-n16/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n16/result.json), [∂C](../results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n16/result.json) |
-| 32 | 1024 | 5.50056350295 | 0.128180 | 5.59906961725 | 0.659362 | 5.11273571409 | 115.110062 | [E2](../results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F11-n32/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n32/result.json), [∂C](../results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n32/result.json) |
-| 64 | 4096 | 5.23978110182 | 0.521769 | 5.06616134618 | 2.622950 | 5.05552564739 | 438.211375 | [E2](../results/heat-second-order-e2-n64-20260928-v1/rows/netbounds-e2-F11-n64/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n64/result.json), [∂C](../results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-F11-n64/result.json) |
-| 128 | 16384 | 5.1369479217 | 3.441643 | 5.04346125474 | 9.690299 | not run | — | [E2](../results/heat-second-order-e2-n128-20260928-v1/rows/netbounds-e2-F11-n128/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n128/result.json) |
+| 8 | 64 | 69.9055951591 | 0.007271 | 646.566696849 | 0.041912 | 5.57734284696 | 7.876738 | [$`\mathcal E_F^{2e_1}`$](../results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F11-n8/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n8/result.json), [∂C](../results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n8/result.json) |
+| 16 | 256 | 7.67279263582 | 0.027784 | 23.3227524317 | 0.172013 | 5.23280665598 | 30.230704 | [$`\mathcal E_F^{2e_1}`$](../results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F11-n16/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n16/result.json), [∂C](../results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n16/result.json) |
+| 32 | 1024 | 5.50056350295 | 0.128180 | 5.59906961725 | 0.659362 | 5.11273571409 | 115.110062 | [$`\mathcal E_F^{2e_1}`$](../results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F11-n32/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n32/result.json), [∂C](../results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n32/result.json) |
+| 64 | 4096 | 5.23978110182 | 0.521769 | 5.06616134618 | 2.622950 | 5.05552564739 | 438.211375 | [$`\mathcal E_F^{2e_1}`$](../results/heat-second-order-e2-n64-20260928-v1/rows/netbounds-e2-F11-n64/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n64/result.json), [∂C](../results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-F11-n64/result.json) |
+| 128 | 16384 | 5.1369479217 | 3.441643 | 5.04346125474 | 9.690299 | not run | — | [$`\mathcal E_F^{2e_1}`$](../results/heat-second-order-e2-n128-20260928-v1/rows/netbounds-e2-F11-n128/result.json), [Q1](../results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n128/result.json) |
 
 ### Interpretation
 
-- $`F_{00}`$: Q1 is tighter than direct E2 on $`n=32,64,128`$; direct E2 is tighter or equal on $`n=8,16`$. At $`n=128`$, Q1 gives 7.22384190433 versus 7.28605283969; its excess above the retained sampled reference is 19.93 times smaller. This ratio uses an observed lower estimate, not the unknown exact supremum.
-- $`F_{11}`$: Q1 is tighter than direct E2 on $`n=64,128`$; direct E2 is tighter or equal on $`n=8,16,32`$. At $`n=128`$, Q1 gives 5.04346125474 versus 5.1369479217; its excess above the retained sampled reference is 27.50 times smaller. This ratio uses an observed lower estimate, not the unknown exact supremum.
-- ∂-CROWN is tighter than both NetBounds constructions on 6 of the six matched method/coordinate/grid comparisons at $`n=8,16,32`$. At $`n=64`$, the Q1 expansion is tighter than ∂-CROWN for $`F_{00}`$, while ∂-CROWN is tighter than Q1 for $`F_{11}`$; ∂-CROWN is tighter than direct E2 for both. No $`n=128`$ ∂-CROWN comparison is included yet.
+- $`F_{00}`$: Q1 is tighter than $`\mathcal E_F^{2e_0}`$ on $`n=32,64,128`$; $`\mathcal E_F^{2e_0}`$ is tighter or equal on $`n=8,16`$. At $`n=128`$, Q1 gives 7.22384190433 versus 7.28605283969; its excess above the retained sampled reference is 19.93 times smaller. This ratio uses an observed lower estimate, not the unknown exact supremum.
+- $`F_{11}`$: Q1 is tighter than $`\mathcal E_F^{2e_1}`$ on $`n=64,128`$; $`\mathcal E_F^{2e_1}`$ is tighter or equal on $`n=8,16,32`$. At $`n=128`$, Q1 gives 5.04346125474 versus 5.1369479217; its excess above the retained sampled reference is 27.50 times smaller. This ratio uses an observed lower estimate, not the unknown exact supremum.
+- ∂-CROWN is tighter than both NetBounds constructions on 6 of the six matched method/coordinate/grid comparisons at $`n=8,16,32`$. At $`n=64`$, the Q1 expansion is tighter than ∂-CROWN for $`F_{00}`$, while ∂-CROWN is tighter than Q1 for $`F_{11}`$; ∂-CROWN is tighter than $`\mathcal E_F^{2e_i}`$ for both. No $`n=128`$ ∂-CROWN comparison is included yet.
 - Q1 pays for fourth-network-derivative envelopes and is not uniformly tighter: on coarse cells the large remainder envelope can dominate. These prescribed-grid timings are implementation costs, not equal-CPU search outcomes or a convergence-order proof. No minimum/intersection of the two NetBounds constructions is applied.
 
 ## Measured ∂-CROWN cost for 64×64
