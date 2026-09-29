@@ -19,6 +19,7 @@ def test_display_equations_are_separate_markdown_blocks():
     text = REPORT.read_text()
     lines = text.splitlines()
     assert '$$' not in text, 'Dollar-delimited displays let Markdown consume TeX escapes'
+    assert r'\operatorname' not in text, 'GitHub rejects this macro; use the upright Alg label'
     for i, line in enumerate(lines):
         if line == '```math':
             assert i and not lines[i - 1].strip(), f'No blank line before equation on line {i + 1}'
@@ -35,7 +36,8 @@ def test_inline_math_is_protected_from_markdown_emphasis_and_escapes():
 
 
 def test_tex_bodies_and_tags_unchanged_by_presentation_fix():
-    text = unprotect(REPORT.read_text())
+    # These two spellings denote the same upright algorithm label.
+    text = unprotect(REPORT.read_text()).replace(r'\mathrm{Alg}', r'\operatorname{Alg}')
     display = DISPLAY.findall(text)
     inline = re.findall(r'\$([^\$\n]+)\$', DISPLAY.sub('', text))
     bodies = {kind: [' '.join(s.split()) for s in values]
