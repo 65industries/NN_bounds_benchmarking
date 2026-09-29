@@ -1,0 +1,140 @@
+{
+  "case_id": "netbounds-q1-expansion-F11-n64",
+  "method": "netbounds-q1-expansion",
+  "coordinate": 1,
+  "n": 64,
+  "cells": 4096,
+  "cell_evaluations": 4096,
+  "native_calls": 16,
+  "batch_size": 256,
+  "bound": 5.066161346183422,
+  "signed_lower": 0.2486173368131917,
+  "signed_upper": 5.066161346183422,
+  "epsilon": [
+    0.0078125,
+    0.0078125
+  ],
+  "coverage": {
+    "complete": true,
+    "nonoverlapping": true,
+    "uniform": true,
+    "adaptive_splits": 0,
+    "index_start": 0,
+    "index_stop": 4096,
+    "index_order": "row major over 2 axes: axis k = (index // n**(2-1-k)) % n",
+    "cell_volume_exact": "1/4096",
+    "volume_sum_exact": "1",
+    "proof": "all Cartesian grid indices exactly once; no coarser or finer grid evaluated"
+  },
+  "bounding_cpu_seconds": 2.622949733,
+  "bounding_wall_seconds": 2.6477788467891514,
+  "inline_diagnostics_cpu_seconds": 0.024676225999999968,
+  "checkpoint_loading_cpu_seconds": 0.272084168,
+  "backend_setup_cpu_seconds": 0.009832027000000076,
+  "checkpoint": {
+    "file": "heat_1d_separable_L2_W128_netbounds.pt",
+    "kind": "copied NetBounds 1D Heat checkpoint",
+    "source_path": "/home/vincent/repos/NetBounds/trained_models/Heat/1d_separable/num_layers2_width128/num_layers2_width128_weights.pt",
+    "source_repo": "65industries/NetBounds-dev (local checkout /home/vincent/repos/NetBounds)",
+    "source_commit": "89a18fc5a937b26541dd3def2fb3757f18c17a4a",
+    "architecture": [
+      2,
+      128,
+      128,
+      1
+    ],
+    "activation": "tanh after every hidden affine layer; linear output",
+    "dtype": "torch.float32",
+    "sha256": "fb1f6f1d8dc628c84f561a05b0f5c9b2ef1537d93be4fac8c427f13c722efb68",
+    "bytes": 71569,
+    "input_dim": 2,
+    "output_dim": 1,
+    "path": "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/model_weights/heat_1d_separable_L2_W128_netbounds.pt",
+    "manifest_path": "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/model_weights/manifest.json",
+    "storage_dtype": "torch.float32",
+    "execution_dtype": "torch.float64",
+    "device": "cpu",
+    "frozen": true,
+    "state_dict_layout": "hidden_layers.N.{weight,bias}; output_layer.{weight,bias}"
+  },
+  "backend": {
+    "method": "netbounds-q1-uniform",
+    "backend": "NetBounds-dev",
+    "backend_commit": "7835f105a6731bb6c133fd3d8ddcc243c1e9326b",
+    "backend_root": "/home/vincent/.local/share/nn-crown-benchmark/upstream/NetBounds-dev",
+    "patches": [],
+    "adapter": "raw-MLP view; manuscript Q1 moment integration wrapper",
+    "cell_model": "g(c)+grad(g)(c).z",
+    "remainder": "D(z)=0.5 sum_qr H_qr |z_q||z_r|, H_qr=abs(D_qr g(c))+variation_qr",
+    "highest_network_derivative_order": 4,
+    "target_hessian_pairs": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "network_quartets": [
+      [
+        0,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "activation_taylor_depth_requested": null,
+    "activation_taylor_depth_effective": {
+      "1": 5,
+      "2": 4,
+      "3": 3,
+      "4": 2
+    },
+    "activation_remainder": "upstream exponential tanh-derivative envelope; unchanged",
+    "derivative_bound_meaning": "variation from center, not an absolute derivative supremum",
+    "precision": {
+      "parameters": "torch.float64",
+      "activation_bounds": "torch.float64",
+      "inputs_and_accumulation": "torch.float64",
+      "outward_rounded": false
+    },
+    "domain_coordinates": "full input dimension; no spatial/time convention",
+    "q1_source": "tex/IMA/section2.tex:174-275; eq:cell-quadrature-values, eq:q1-cell-moment-correction",
+    "integration": "none: L-infinity Taylor-cell enclosures; jets only",
+    "grid_policy": "complete uniform grids only; no adaptive leaves; epsilon=1/(2n) per axis"
+  },
+  "pid": 1695789,
+  "finished_numerics_utc": "2026-09-28T19:50:09.737112+00:00",
+  "max_cell": 4038,
+  "max_cell_center": [
+    0.9921875,
+    0.1015625
+  ],
+  "max_cell_base": 4.9627233269941495,
+  "max_cell_affine_radius": 0.08125801879529534,
+  "max_cell_remainder_radius": 0.022180000393976988,
+  "max_cell_variation": 0.10343801918927234,
+  "stop_reason": "complete_uniform_grid",
+  "cpu_ceiling": null,
+  "timing": "Existing run_netbounds compute timer: full fixed-grid jets, native fourth-order propagation, array collection and signed supremum reduction. Setup/loading/I/O/post-run diagnostics excluded; inline midpoint consistency and call-count diagnostics excluded by the existing CPU ledger. Wall time includes those inline diagnostics.",
+  "precision": "CPU float64, one thread, no outward rounding",
+  "grid_convention": "n cell centers per axis, n^2 closed cells, radius 1/(2*n)"
+}

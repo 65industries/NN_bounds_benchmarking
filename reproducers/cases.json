@@ -1,0 +1,717 @@
+[
+  {
+    "case_id": "gauss-reference-F",
+    "method": "gauss-reference",
+    "target": "F",
+    "n": 200,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/gauss-reference-F/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/gauss-reference-F/result.json": "4b674127bb209189d2857fbf93b1d0c78cbe5a131d50dde872a28f08a9b60dac",
+      "results/heat-l2-matched-20260928-v1/rows/gauss-reference-F/diagnostics.json": "f6e8217b9135bb1406565aacc24d7a70453870844c4d38fb7891f5f4498f1a79"
+    }
+  },
+  {
+    "case_id": "gauss-reference-F00",
+    "method": "gauss-reference",
+    "target": "F00",
+    "n": 200,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/gauss-reference-F00/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/gauss-reference-F00/result.json": "f99080b3c13ade1e31279dc7f8fd53e7b67b99c223f7ead94d3257de5b7ca9bb",
+      "results/heat-l2-matched-20260928-v1/rows/gauss-reference-F00/diagnostics.json": "f6e8217b9135bb1406565aacc24d7a70453870844c4d38fb7891f5f4498f1a79"
+    }
+  },
+  {
+    "case_id": "gauss-reference-F11",
+    "method": "gauss-reference",
+    "target": "F11",
+    "n": 200,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/gauss-reference-F11/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/gauss-reference-F11/result.json": "eef234874aa199c9a99ae2610238b2b12a12b1d10f96e9bd79af88e72a8f3f69",
+      "results/heat-l2-matched-20260928-v1/rows/gauss-reference-F11/diagnostics.json": "f6e8217b9135bb1406565aacc24d7a70453870844c4d38fb7891f5f4498f1a79"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-l2-F-n128",
+    "method": "netbounds-q1-l2",
+    "target": "F",
+    "n": 128,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n128/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n128/result.json": "8501fc342d189a04b942ab7bc88eae424507a96f27a5a35231e6d28be6cc6357",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n128/diagnostics.json": "136673db0f70f9077e262ab3ed7f2b7eee9573204dab63a566659b18c9760d06",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n128/cells.npz": "203f6c49576d874901962fb9763dfeba4d8d7c4599de0a2c124ed01848fcec73"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-l2-F-n16",
+    "method": "netbounds-q1-l2",
+    "target": "F",
+    "n": 16,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n16/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n16/result.json": "897ab98bf200145bb5cc1bc328ae718b1cc5c6874773aa28a99979c0d2fa01d1",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n16/diagnostics.json": "8330404dfc0e2672b185bc2e6ef2db27a174051e28d4d4620bfc5c4b126e8ea4",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n16/cells.npz": "121d563e62b3119d96438318ec2e79b5e2e2364b6065a7dbb62e3f28e9c87fd7"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-l2-F-n32",
+    "method": "netbounds-q1-l2",
+    "target": "F",
+    "n": 32,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n32/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n32/result.json": "c0f10cfb42d3664a12660c4eb80668c60d5c7d7b389441cd03eb8bd5ad70b7b8",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n32/diagnostics.json": "16d0cf1e8bb0cbd842a2554c5cdd7725ef2c831b183dcea64ff5b6c453eba118",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n32/cells.npz": "e50fe24c5bb6eb457df4d53f11bd33be92d53413fcd0672683d94d345822b99b"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-l2-F-n64",
+    "method": "netbounds-q1-l2",
+    "target": "F",
+    "n": 64,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n64/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n64/result.json": "ffbec0a5c665a403b3d40e1514171d06f166df178c19ff79faa74524be423eed",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n64/diagnostics.json": "eaeb1c0f2e4b7e8755afa09c802762dc68334de2e461fa576ee0766db762ffa6",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n64/cells.npz": "c2d7f78720b8b56aff11782af79a41b4f25dd5107186a144ebb2ad586fa61cdc"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-l2-F-n8",
+    "method": "netbounds-q1-l2",
+    "target": "F",
+    "n": 8,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n8/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n8/result.json": "29168aa09495afefe41c89b368e99a89e571af4dcd07df1173bdffd5a90d7fb0",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n8/diagnostics.json": "bb2b0787508b862640058d5d856239ce719e1cb2bbb6132e21c1631259ace21d",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F-n8/cells.npz": "a406b643dca699ea4e17df5906845ca6d84ee9c6acf22810d661482d3dda26d9"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-l2-F00-n128",
+    "method": "netbounds-q1-l2",
+    "target": "F00",
+    "n": 128,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n128/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n128/result.json": "fa304d5abd54d7d244496bfbc4bc458466be9aa75d818ba2d4090a807f1f03ac",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n128/diagnostics.json": "c29641b05ad77026a8c2e03766de0ac0e5c2d259d1d588815046b68d66b076d1",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n128/cells.npz": "96e45a24f5c69d75050491ad72c78768a254241850a57e2c9038a42d430ebc1a"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-l2-F00-n16",
+    "method": "netbounds-q1-l2",
+    "target": "F00",
+    "n": 16,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n16/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n16/result.json": "35e044913b84eaa2b9d4a72e6479b550fc84fbf8baeff03d50bb098862011840",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n16/diagnostics.json": "7486ddc8870a929d13e7b34da30b53438aa5675c0a5e846ce4bc92f222e3a273",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n16/cells.npz": "3926a1016565d1e1dc757d0104920b596bff3e3e1d766ae984dd4443e0fb138e"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-l2-F00-n32",
+    "method": "netbounds-q1-l2",
+    "target": "F00",
+    "n": 32,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n32/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n32/result.json": "d4bcd3b71724fb9e54fd5a43707b27ed96caae73e80ac4b008e1d8e33e246647",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n32/diagnostics.json": "6d2f9b6c6e0707c8e0ef6c4001b3c08803b2251e6caae73492053fd12d2e8663",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n32/cells.npz": "8b443ce84bd660ce4657dcd873b037b67acedb84e9125a271a4ffc5b7a9c5e61"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-l2-F00-n64",
+    "method": "netbounds-q1-l2",
+    "target": "F00",
+    "n": 64,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n64/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n64/result.json": "192cd0274cc7306869ae0d35e76b178c3839577a7fd09198986c5c9f4c09cbf5",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n64/diagnostics.json": "d9a7e80a3c1a155883281cf25a34d3f5f6455d405b604c6332fe297d8255e68d",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n64/cells.npz": "6691c427b655f349c5708477eca21921c2b3596d0cddc03c22ae271cb96bcb93"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-l2-F00-n8",
+    "method": "netbounds-q1-l2",
+    "target": "F00",
+    "n": 8,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n8/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n8/result.json": "a8c3bc2813386300028e84effd7755787a8157d681100e1168a50ac055018796",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n8/diagnostics.json": "11d1b0a734ab144188778684b1221f7ba9f93abebced122c50069b0e879f0b59",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F00-n8/cells.npz": "879113dbd3a0fe4f3d10a6ddd677ea0db1ecd173c40d9154920f8b219fe97a40"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-l2-F11-n128",
+    "method": "netbounds-q1-l2",
+    "target": "F11",
+    "n": 128,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n128/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n128/result.json": "1920be3e9ff69ab0693e4adc5f9f675c95e43111dced00ac049465e605cf09cc",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n128/diagnostics.json": "60b34c12ed3a1d064a89d48a57d423e267fe08b5ab50c4a580aa4e6010f0bb0f",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n128/cells.npz": "202826c4f09caeddfc1fbd8bc04a890d91048b1cfc37e7fe33f25b17a1f35496"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-l2-F11-n16",
+    "method": "netbounds-q1-l2",
+    "target": "F11",
+    "n": 16,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n16/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n16/result.json": "e1b80e692715271b78a8b6d335bbe7fb57ab98b738874ecca382d63ac5eefd34",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n16/diagnostics.json": "46546e09b1d26c60d836adbf1d944ae7170c5d801d923e75e77042cd93343703",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n16/cells.npz": "2490d1c03020ee857e4141818428ef3d430b183d5326d617afc5b0992afba960"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-l2-F11-n32",
+    "method": "netbounds-q1-l2",
+    "target": "F11",
+    "n": 32,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n32/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n32/result.json": "03d841bb72c24ce039ba3d2044d64dcc39f9c7e5100fe786f7a927efef03d835",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n32/diagnostics.json": "1f831750ac66e4e7e12c5be24e5f928d02e16a657888946ec1f55ea581713fca",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n32/cells.npz": "aa0e80b17086aa14ae95fdcc0c86a099c29ddd8a8381249f33c991f84e662c7c"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-l2-F11-n64",
+    "method": "netbounds-q1-l2",
+    "target": "F11",
+    "n": 64,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n64/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n64/result.json": "befc446cb3c257bd7b269d7a5a800789ba9303df4503361683f5237389d52839",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n64/diagnostics.json": "036a76d2f1b3bb7bc84c6ee89762da747f80c15c375f6f1df8ca9678ca118257",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n64/cells.npz": "50c266570d926bbd269235a8a0ffe963bc73c3594927c7863d12a49a3fe6bcf6"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-l2-F11-n8",
+    "method": "netbounds-q1-l2",
+    "target": "F11",
+    "n": 8,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n8/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n8/result.json": "cd582857392efe639d2f4f7e652bbe783d34ce5b8b77b631ca50402f88457f05",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n8/diagnostics.json": "4603614b1e12755a70f0346621d438cf7005325707d747ba07005225c5430bc4",
+      "results/heat-l2-matched-20260928-v1/rows/netbounds-q1-l2-F11-n8/cells.npz": "3251bf04f2fb3573806d68664eb50d88f06365f43d563870ee8e3cc35818c360"
+    }
+  },
+  {
+    "case_id": "partial-crown-affine-l2-F-n16",
+    "method": "partial-crown-affine-l2",
+    "target": "F",
+    "n": 16,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F-n16/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F-n16/result.json": "2a279596493e728229b4a90fc5c4575a2a3c09319457bb7acc00eb1b4c914588",
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F-n16/diagnostics.json": "a1a8af85458a18d1e9088a90715f28467d025a0e30098a62668cd2b1587c6596",
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F-n16/cells.npz": "c82b0e594ecd3e004c51133500cba658041a75ecf6bd56296b21210bdb22a417"
+    }
+  },
+  {
+    "case_id": "partial-crown-affine-l2-F-n32",
+    "method": "partial-crown-affine-l2",
+    "target": "F",
+    "n": 32,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F-n32/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F-n32/result.json": "b4b24ff13bf3653d6840cc6e654817c3b74862701ebb46eacb572bbbf28d8831",
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F-n32/diagnostics.json": "cda13081fcdd3de2917d9fa8e3a5920dcaad193813a8eae70560b6bad712a4e2",
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F-n32/cells.npz": "374117013be944e02b5f01d2ff31cc5e98b833df4ec61b7f3f93309f70d9e7f6"
+    }
+  },
+  {
+    "case_id": "partial-crown-affine-l2-F-n8",
+    "method": "partial-crown-affine-l2",
+    "target": "F",
+    "n": 8,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F-n8/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F-n8/result.json": "5c2fb23d3d25c0f04aab0efdcc7308fcbf6dc2d6d8ae562bc2f90b59ea607b31",
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F-n8/diagnostics.json": "b53c6e8503da23321a0d430172b393c3b031313eb09ac00b830b946905fcd456",
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F-n8/cells.npz": "95e1f74c063c10ceb70e13e6ef8ea6c20f6d868f76b200f677bc32513fcb072b"
+    }
+  },
+  {
+    "case_id": "partial-crown-affine-l2-F00-n16",
+    "method": "partial-crown-affine-l2",
+    "target": "F00",
+    "n": 16,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F00-n16/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F00-n16/result.json": "6d5e0290b81faa3ebfee5f1ea04d0ce26d325899eb02cfe524f56ec5792964f7",
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F00-n16/diagnostics.json": "2fe16909c05a7e53f8b89fea93bad5699d65c4468cca35a0ac10ba20f9cd6aea",
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F00-n16/cells.npz": "b517b321adeee7ec575f042549b9942907184ff01ca3853fd76b6b79e8add7ab"
+    }
+  },
+  {
+    "case_id": "partial-crown-affine-l2-F00-n32",
+    "method": "partial-crown-affine-l2",
+    "target": "F00",
+    "n": 32,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F00-n32/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F00-n32/result.json": "f09cc6488c152fe486858ac45f8f5915bae9981f33d704da96ea25ceb3a362de",
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F00-n32/diagnostics.json": "3c43fafda49680544ee5937a1d9638dc3eaf69fc4d314a006b197ac3cd3c8710",
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F00-n32/cells.npz": "13809da59297c9aa5d6fed69d07bb968c463ef5e0d014d07a16072098d478011"
+    }
+  },
+  {
+    "case_id": "partial-crown-affine-l2-F00-n8",
+    "method": "partial-crown-affine-l2",
+    "target": "F00",
+    "n": 8,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F00-n8/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F00-n8/result.json": "e1ec611e3a661bfa2d3331069b6f54c04baf40bd820aff4c0b25c86f7ac87614",
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F00-n8/diagnostics.json": "61b58feba8c7b8479b374d68093fa12d26a2a9f5664e348602962124cc773d10",
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F00-n8/cells.npz": "1364879ea8ae11637b25ed35f9e1753285523e6903a1e09f4d3406c540366886"
+    }
+  },
+  {
+    "case_id": "partial-crown-affine-l2-F11-n16",
+    "method": "partial-crown-affine-l2",
+    "target": "F11",
+    "n": 16,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F11-n16/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F11-n16/result.json": "03d34ac80fceacbd51ee366103ac27c9f5e2ec1b6faa6105161990ecb46e342b",
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F11-n16/diagnostics.json": "64e941180bda4c51e912041ba849a29eaa59c7d7ac6070508217d98cf089f939",
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F11-n16/cells.npz": "87fccf6fdc18fc814b8ce0c5ea3dbaa3041f86ea9decfbf76875c23d280d97af"
+    }
+  },
+  {
+    "case_id": "partial-crown-affine-l2-F11-n32",
+    "method": "partial-crown-affine-l2",
+    "target": "F11",
+    "n": 32,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F11-n32/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F11-n32/result.json": "8aa8bedf4dafb0ffbff62b9c31fc44fe92394967af5696d498981132a84b51d6",
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F11-n32/diagnostics.json": "d02df2a43c4c40eee505fb5e4c84812efe6311b07ef4ea915b82f1e19be28e94",
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F11-n32/cells.npz": "97a0148e01845c3d846f53bb23277eb7d80d6ab405d8c6471f1ed54f7618d51b"
+    }
+  },
+  {
+    "case_id": "partial-crown-affine-l2-F11-n8",
+    "method": "partial-crown-affine-l2",
+    "target": "F11",
+    "n": 8,
+    "result_path": "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F11-n8/result.json",
+    "artifacts": {
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F11-n8/result.json": "9b0228f9b97e3b084d0c89bcb4e4006d16136721e2857709df7eb2dcea7b31e3",
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F11-n8/diagnostics.json": "c372c293f24db18af89c679533efb2bb180190bc08d35a9e2ede53a47d8989c6",
+      "results/heat-l2-matched-20260928-v1/rows/partial-crown-affine-l2-F11-n8/cells.npz": "81b35166fe7842640dd0a2eff6fe17027307be73bf31e95d92e122e572f31fa4"
+    }
+  },
+  {
+    "case_id": "partial-crown-F00-n64",
+    "method": "partial-crown",
+    "target": "F00",
+    "n": 64,
+    "result_path": "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-F00-n64/result.json",
+    "artifacts": {
+      "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-F00-n64/result.json": "d7f5d4ff17623ed774698129de0c9785af7a6319698e73ff77c08daa921f427f",
+      "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-F00-n64/diagnostics.json": "121ea8eeffad8cc1692665f44ca4b768f09c1834a87385352bb14c7c4b6985b0",
+      "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-F00-n64/cells.npz": "29bd9743b92599a2810d4b6386741837597dbb940eeb0ba9ad08ee1495aea98c"
+    }
+  },
+  {
+    "case_id": "partial-crown-F11-n64",
+    "method": "partial-crown",
+    "target": "F11",
+    "n": 64,
+    "result_path": "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-F11-n64/result.json",
+    "artifacts": {
+      "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-F11-n64/result.json": "403cfd1bd2f2e66927f5edc3d0f9bea16351e5258d7ae5dbb784adfcba5cc39a",
+      "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-F11-n64/diagnostics.json": "0c5a3767e1d68b5713aecea5b14116b04bd86dfbf4e3cd38fd99b5ed106e3aaf",
+      "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-F11-n64/cells.npz": "44756838de4b45e8bd284c3deaadb4979af8fbfd715befc14ce724b898c91667"
+    }
+  },
+  {
+    "case_id": "partial-crown-affine-l2-F-n64",
+    "method": "partial-crown-affine-l2",
+    "target": "F",
+    "n": 64,
+    "result_path": "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-affine-l2-F-n64/result.json",
+    "artifacts": {
+      "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-affine-l2-F-n64/result.json": "ed3054f634e48ff2944718f1fc90e5867339054f412ca8b7db29eb34030db7dc",
+      "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-affine-l2-F-n64/diagnostics.json": "ab7f12358bfdd37cd7184a91403f52daf80e1e8a727039d6ff73a4843dfcce95",
+      "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-affine-l2-F-n64/cells.npz": "d554301ad9cf2d06d7e77fe51348e08006da3a6beb5d2311175b95e40f7ad24b"
+    }
+  },
+  {
+    "case_id": "partial-crown-affine-l2-F00-n64",
+    "method": "partial-crown-affine-l2",
+    "target": "F00",
+    "n": 64,
+    "result_path": "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-affine-l2-F00-n64/result.json",
+    "artifacts": {
+      "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-affine-l2-F00-n64/result.json": "ebb062dbd6168fdce879398f57829ee598d10612301247509b911d78ea0b6594",
+      "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-affine-l2-F00-n64/diagnostics.json": "edd175d8c889533c3e427d266ecc46d0f4805f4805a64e8523641b446a749738",
+      "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-affine-l2-F00-n64/cells.npz": "629d2ef1d786e8f949c411370fdda188c9f437d2f2fbc20a99155f6b71b4093d"
+    }
+  },
+  {
+    "case_id": "partial-crown-affine-l2-F11-n64",
+    "method": "partial-crown-affine-l2",
+    "target": "F11",
+    "n": 64,
+    "result_path": "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-affine-l2-F11-n64/result.json",
+    "artifacts": {
+      "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-affine-l2-F11-n64/result.json": "8f87a4dc4f05f75336ab5548470094ba6812acd8015da361b060dec0327ce143",
+      "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-affine-l2-F11-n64/diagnostics.json": "d37ed5fad3dc4274e14efb95e3d3b129d56470b8b52c0ffe68a1935a75a38285",
+      "results/heat-partial-crown-fine-20260928-v1/rows/partial-crown-affine-l2-F11-n64/cells.npz": "30ec51d96af17a5cc6797f4a52809207052c3d6cacaa11251a8e194718673761"
+    }
+  },
+  {
+    "case_id": "netbounds-e2-F00-n16",
+    "method": "netbounds-e2",
+    "target": "F00",
+    "n": 16,
+    "result_path": "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F00-n16/result.json",
+    "artifacts": {
+      "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F00-n16/result.json": "a74e87e0aa1b4a0a7189b1d6c494780b36aa0045464c6a82205e957b6849e44c",
+      "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F00-n16/diagnostics.json": "4761274cfe65a8a7f5d325c949d14efff966e4ad903e13b0cff1d5550734ad6c",
+      "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F00-n16/cells.npz": "99f17deac48410d3d0670ca15fb232f9f614432aa6e22780fc82df52cc6aded8"
+    }
+  },
+  {
+    "case_id": "netbounds-e2-F00-n32",
+    "method": "netbounds-e2",
+    "target": "F00",
+    "n": 32,
+    "result_path": "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F00-n32/result.json",
+    "artifacts": {
+      "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F00-n32/result.json": "5c1fb7dd05de1c800c88de32f5dd2c2c02389192dd59a11e0260563d88a74e0d",
+      "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F00-n32/diagnostics.json": "78a8a3a27ef6f8497b6657556bd609336dfc09894d7d1b05894ebec9d80fab4a",
+      "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F00-n32/cells.npz": "939ab75401472b34624195eb6d68165d837cc26f39e234905bb0e49a42f85ce4"
+    }
+  },
+  {
+    "case_id": "netbounds-e2-F00-n8",
+    "method": "netbounds-e2",
+    "target": "F00",
+    "n": 8,
+    "result_path": "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F00-n8/result.json",
+    "artifacts": {
+      "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F00-n8/result.json": "4fd50a7e59c9605665cbaeb616a12fe4e4d193627587ce7acad90d59f7302356",
+      "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F00-n8/diagnostics.json": "0e55215a2c135beee0cdd3656a0cb60f1adeadf6cc9fd8c6b990089f22eaa0cd",
+      "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F00-n8/cells.npz": "9af69ba369677cd8880d393b80fdaf4bd63d51961b243a5abbd8a2aff3289320"
+    }
+  },
+  {
+    "case_id": "netbounds-e2-F11-n16",
+    "method": "netbounds-e2",
+    "target": "F11",
+    "n": 16,
+    "result_path": "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F11-n16/result.json",
+    "artifacts": {
+      "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F11-n16/result.json": "35097f5336f505a0c27cca425e8635a227abd53458add12e30f6740a2a8b573f",
+      "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F11-n16/diagnostics.json": "f497c4e7aa3bee63a255f21ad0098a5206914d2ae8972cc81b2f8cd6b889becc",
+      "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F11-n16/cells.npz": "28485c0ff1c1e5e6b8900c664110dbf3c1b2a85214afa70e74556d0dc5bdb32c"
+    }
+  },
+  {
+    "case_id": "netbounds-e2-F11-n32",
+    "method": "netbounds-e2",
+    "target": "F11",
+    "n": 32,
+    "result_path": "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F11-n32/result.json",
+    "artifacts": {
+      "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F11-n32/result.json": "357208d64a64b0fb851bb29532c0aaf1658f7b31fda1c916c1eac27f4186f047",
+      "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F11-n32/diagnostics.json": "10cb8f9ea70f166b7c5cdf575b993d96b252d530f365633aeb6d5fa755128994",
+      "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F11-n32/cells.npz": "19b7c98f6e29e1b560caa8c22b57b95326993b5133aff0239e442120e91c003a"
+    }
+  },
+  {
+    "case_id": "netbounds-e2-F11-n8",
+    "method": "netbounds-e2",
+    "target": "F11",
+    "n": 8,
+    "result_path": "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F11-n8/result.json",
+    "artifacts": {
+      "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F11-n8/result.json": "79a237d60aafa3f646daff372cccaf26d2073eeeb5102690b3a20bac44020d55",
+      "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F11-n8/diagnostics.json": "62a43484a8f6f30efab80596c000172e9de735292734adac607b17d8107a7a98",
+      "results/heat-second-order-e2-20260928-v1/rows/netbounds-e2-F11-n8/cells.npz": "669a76a69ca7b8aa81a0dfaf83560d357b0b482baf2ed97537d447f99143693e"
+    }
+  },
+  {
+    "case_id": "partial-crown-F00-n16",
+    "method": "partial-crown",
+    "target": "F00",
+    "n": 16,
+    "result_path": "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F00-n16/result.json",
+    "artifacts": {
+      "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F00-n16/result.json": "63b3419b461fcf56e2adf600f52ac64c172c70b5aec07082c8a2e6da7bdc2b18",
+      "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F00-n16/diagnostics.json": "6ced1db21ab283d2a2863324a63293d4070af6ae6165475661453e9f36bf9c74",
+      "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F00-n16/cells.npz": "0b78c4d9beeec7a4a42141d6aa97abf1704a0915524cf67f4c0f8ab115158980"
+    }
+  },
+  {
+    "case_id": "partial-crown-F00-n32",
+    "method": "partial-crown",
+    "target": "F00",
+    "n": 32,
+    "result_path": "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F00-n32/result.json",
+    "artifacts": {
+      "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F00-n32/result.json": "878a19ea9a38f3f670056ca6c28f429406c1235e8f5f505c4bc4b0cf4b445307",
+      "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F00-n32/diagnostics.json": "3786373d85e56ae8920b79a9b2d6ab2cb773945278df3c7cd71e7f108b6ead4f",
+      "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F00-n32/cells.npz": "aca27107e6bb74791c179338e63c4bce46abcbd5d83f839c01479a30d204aa87"
+    }
+  },
+  {
+    "case_id": "partial-crown-F00-n8",
+    "method": "partial-crown",
+    "target": "F00",
+    "n": 8,
+    "result_path": "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F00-n8/result.json",
+    "artifacts": {
+      "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F00-n8/result.json": "1909f4994ebdb7f17e7511d868f718a6586ad4b2282484557c97d46598bc630b",
+      "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F00-n8/diagnostics.json": "433fdfaba7aa3eed501a2d349ce94ee82de496da350bc4e748f3fbc77d5f0891",
+      "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F00-n8/cells.npz": "0a80c8838a2d3e1e2b7a8b45d9b8f2a25c7bb354ebf65c79f9221641cb096bb8"
+    }
+  },
+  {
+    "case_id": "partial-crown-F11-n16",
+    "method": "partial-crown",
+    "target": "F11",
+    "n": 16,
+    "result_path": "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n16/result.json",
+    "artifacts": {
+      "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n16/result.json": "cf1343a87cce0163c762f1975efb8b259b1b340647044c49bd568d0e20561689",
+      "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n16/diagnostics.json": "35f80866d928c8220e81958491e0cd24f530bbd7e40eb4c5c4487d42785d9db5",
+      "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n16/cells.npz": "da0b688424956c7d8ee82cf869d428a4849d3b69b4b03c526708774f80036a83"
+    }
+  },
+  {
+    "case_id": "partial-crown-F11-n32",
+    "method": "partial-crown",
+    "target": "F11",
+    "n": 32,
+    "result_path": "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n32/result.json",
+    "artifacts": {
+      "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n32/result.json": "f5f61ce0922daf547157c634df6d9777c5f6af572beac248e043dcdd6ef3724c",
+      "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n32/diagnostics.json": "225ce204d17b9594aba43cf843aa1192f5d2eec4c514aa594ef0125f9060fca0",
+      "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n32/cells.npz": "16b657373bdda643efd0582440c311969161c8f6bfc933484738fc85443de074"
+    }
+  },
+  {
+    "case_id": "partial-crown-F11-n8",
+    "method": "partial-crown",
+    "target": "F11",
+    "n": 8,
+    "result_path": "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n8/result.json",
+    "artifacts": {
+      "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n8/result.json": "70ab7b3801e47143d6749ade9c186931720cd5f43c7a56db1d7ad5c3ed5e02a0",
+      "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n8/diagnostics.json": "87418c4de4cb78eb3a895007f12941b7c87784ee001c7216650973227ebbcd46",
+      "results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n8/cells.npz": "730f1ce285f07db118de3a063cb3a06499a23ba182595d0323133e53c4d6d779"
+    }
+  },
+  {
+    "case_id": "reference-F00",
+    "method": "sup-reference",
+    "target": "F00",
+    "n": 257,
+    "result_path": "results/heat-second-order-e2-20260928-v1/rows/reference-F00/result.json",
+    "artifacts": {
+      "results/heat-second-order-e2-20260928-v1/rows/reference-F00/result.json": "701875268e9e3987d2f5db7b2b915bb58548acd8700554a266ae05f798cf7087",
+      "results/heat-second-order-e2-20260928-v1/rows/reference-F00/reference.npz": "421ad0a228d8dcd5893e4f9b9b4478984112c4e22f7e16c4e221a6f0c3728760"
+    }
+  },
+  {
+    "case_id": "reference-F11",
+    "method": "sup-reference",
+    "target": "F11",
+    "n": 257,
+    "result_path": "results/heat-second-order-e2-20260928-v1/rows/reference-F11/result.json",
+    "artifacts": {
+      "results/heat-second-order-e2-20260928-v1/rows/reference-F11/result.json": "c8fa759c6f187c599ba507844878edf309cd56dbf3a6433b9abc85e063f95130",
+      "results/heat-second-order-e2-20260928-v1/rows/reference-F11/reference.npz": "44fefbe428585fd78329c99776a46e4b23b78eec6047fbfedc77aa0ddd5d476d"
+    }
+  },
+  {
+    "case_id": "netbounds-e2-F00-n128",
+    "method": "netbounds-e2",
+    "target": "F00",
+    "n": 128,
+    "result_path": "results/heat-second-order-e2-n128-20260928-v1/rows/netbounds-e2-F00-n128/result.json",
+    "artifacts": {
+      "results/heat-second-order-e2-n128-20260928-v1/rows/netbounds-e2-F00-n128/result.json": "e9eff3a1ae2a23c79d88cfa41a9ffbb2b884960af1dd726c9ca632be8f352de6",
+      "results/heat-second-order-e2-n128-20260928-v1/rows/netbounds-e2-F00-n128/diagnostics.json": "a0f930e302c70ca16b5887aaf40ea5064b5b8401bd00d99b77820d8c8a02580f",
+      "results/heat-second-order-e2-n128-20260928-v1/rows/netbounds-e2-F00-n128/cells.npz": "efc94792e1c0cec67258f1b8a7ca6a95011cb40bb4afc568fba5ef8634f01aa2"
+    }
+  },
+  {
+    "case_id": "netbounds-e2-F11-n128",
+    "method": "netbounds-e2",
+    "target": "F11",
+    "n": 128,
+    "result_path": "results/heat-second-order-e2-n128-20260928-v1/rows/netbounds-e2-F11-n128/result.json",
+    "artifacts": {
+      "results/heat-second-order-e2-n128-20260928-v1/rows/netbounds-e2-F11-n128/result.json": "b762593277f07f9e24e85db15cdcd0cd1c2309cfe6caa247a7dd0c1d7b15cfc1",
+      "results/heat-second-order-e2-n128-20260928-v1/rows/netbounds-e2-F11-n128/diagnostics.json": "6358c1a5e025b68260c751907af375867343bb80a20c377617260cee0407d50a",
+      "results/heat-second-order-e2-n128-20260928-v1/rows/netbounds-e2-F11-n128/cells.npz": "6d1225899699b2159647d50dc0a264dca8c255cc9055d24e7cab42742f5502b6"
+    }
+  },
+  {
+    "case_id": "netbounds-e2-F00-n64",
+    "method": "netbounds-e2",
+    "target": "F00",
+    "n": 64,
+    "result_path": "results/heat-second-order-e2-n64-20260928-v1/rows/netbounds-e2-F00-n64/result.json",
+    "artifacts": {
+      "results/heat-second-order-e2-n64-20260928-v1/rows/netbounds-e2-F00-n64/result.json": "ec5169ee1fdd05af726c93c12224c486b9c52865b0b511230433f1fcc28e295d",
+      "results/heat-second-order-e2-n64-20260928-v1/rows/netbounds-e2-F00-n64/diagnostics.json": "ab07a4ba2bd0ab0130924456d9d276dd4ff89d493bbd121584c6b27329525a56",
+      "results/heat-second-order-e2-n64-20260928-v1/rows/netbounds-e2-F00-n64/cells.npz": "f5e65c81b340d45e39e419ef2359267d3edafcf39f6e1cfa33316505ad46e233"
+    }
+  },
+  {
+    "case_id": "netbounds-e2-F11-n64",
+    "method": "netbounds-e2",
+    "target": "F11",
+    "n": 64,
+    "result_path": "results/heat-second-order-e2-n64-20260928-v1/rows/netbounds-e2-F11-n64/result.json",
+    "artifacts": {
+      "results/heat-second-order-e2-n64-20260928-v1/rows/netbounds-e2-F11-n64/result.json": "851053ee506a1176b45744fad70c5bb7a7dc90c58feccfeaf57d440e347cd30e",
+      "results/heat-second-order-e2-n64-20260928-v1/rows/netbounds-e2-F11-n64/diagnostics.json": "dea5ba8e9a1d0d0f1e8fc1cda84c85532a41581fc6c8c6b7b1f356ed0c6f3859",
+      "results/heat-second-order-e2-n64-20260928-v1/rows/netbounds-e2-F11-n64/cells.npz": "1523a0a44090cb171b6d17d4dea226f89c9560c6a6dbbbf17c30897e73808fb1"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-expansion-F00-n128",
+    "method": "netbounds-q1-expansion",
+    "target": "F00",
+    "n": 128,
+    "result_path": "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n128/result.json",
+    "artifacts": {
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n128/result.json": "5ad7a1ae9e73001990c6240b7e50ec2e59bcc53aea0093a78c6c2a072e7ed218",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n128/diagnostics.json": "0e37fd100d0791f8bbaf343d106f0fd89fbcab6ecf9aea6ba65261e42f631d20",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n128/cells.npz": "dd79ddb9d3eb2381d73a1c2a40a696e15ff8f34c35746720b4b784f0b10b3e54"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-expansion-F00-n16",
+    "method": "netbounds-q1-expansion",
+    "target": "F00",
+    "n": 16,
+    "result_path": "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n16/result.json",
+    "artifacts": {
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n16/result.json": "55f6f215e009e476e2d19b2762d20af1f7fd4d2a16049abf720077efa63b8a01",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n16/diagnostics.json": "e3b67d91d269d35d030abb54f7e6f4e1b3467dd95dbce962395b984dbd2852e5",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n16/cells.npz": "60227c68c7fd51e8c9460bba0bc6a04dd6be04b6203771579ca1e3e54fb55e6f"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-expansion-F00-n32",
+    "method": "netbounds-q1-expansion",
+    "target": "F00",
+    "n": 32,
+    "result_path": "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n32/result.json",
+    "artifacts": {
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n32/result.json": "ac54f6c6a3047276fc83630caf7fe2d425edf29854202b6122df5c4a6aa7b705",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n32/diagnostics.json": "680afcf18d8404ff67e9c2e19c9dfa0a308e2b4253d775aea55b280c2b3d7a29",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n32/cells.npz": "b23ee5309a5260e760b17efd3af836b8e1410fa53c1024e73f1c2f3efa93d3b8"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-expansion-F00-n64",
+    "method": "netbounds-q1-expansion",
+    "target": "F00",
+    "n": 64,
+    "result_path": "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n64/result.json",
+    "artifacts": {
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n64/result.json": "824a6bd74cd604f12a9f35d4e17366b91922075ef729cba296838ec746a90f36",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n64/diagnostics.json": "d0131cb8d5eb1d715a5dc74bbfa7db47b95d437c6f890de52bc0d115510ff769",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n64/cells.npz": "bba6a067202a9f41f3f0acf71ad0e186fd89e22788e0e16db87dc469157a814f"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-expansion-F00-n8",
+    "method": "netbounds-q1-expansion",
+    "target": "F00",
+    "n": 8,
+    "result_path": "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n8/result.json",
+    "artifacts": {
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n8/result.json": "541fe7d5173bc99b9576a4a42a7eeb5397bf5159ac3f73ab39d7eba23860aa5e",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n8/diagnostics.json": "bff91dba0843d920f98fa113d7217a658f43d6b36efcf0a419e4019544125322",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F00-n8/cells.npz": "30007791474805350d3e4d942d62819ce80a1d833d849a4bf114400f076bf3f4"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-expansion-F11-n128",
+    "method": "netbounds-q1-expansion",
+    "target": "F11",
+    "n": 128,
+    "result_path": "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n128/result.json",
+    "artifacts": {
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n128/result.json": "ec5d8e28caead304749301925680218c8a82869ce3bc1f766280e2f37c5811ad",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n128/diagnostics.json": "3808468672643d6c671a96349fda99cce6478087b248f4a2a39583d4869993bc",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n128/cells.npz": "a74e54fe411f16082bbba7510b4866a029b48d6ec168e6118803bb34ab79680e"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-expansion-F11-n16",
+    "method": "netbounds-q1-expansion",
+    "target": "F11",
+    "n": 16,
+    "result_path": "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n16/result.json",
+    "artifacts": {
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n16/result.json": "fa100991bf1ec4a1a80f3afa9de0ef24536d6286366b0586d80b93e5e00bd065",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n16/diagnostics.json": "e8791a18f2204a9782e9eddc920924a4088ee3b414e7dad984f494a0b0c8d97b",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n16/cells.npz": "9352c702b616fb273ad1634c5f3cfd5990b06adfe72f5af07779219860b92175"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-expansion-F11-n32",
+    "method": "netbounds-q1-expansion",
+    "target": "F11",
+    "n": 32,
+    "result_path": "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n32/result.json",
+    "artifacts": {
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n32/result.json": "1f9bfe4259320187520a8fba1be927ee0066ec65d2711a4deaf24253a3329ca1",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n32/diagnostics.json": "2c42079753ffe5e42784f2dccff2e624a2d77c3fe7fe55588d158107875cbc27",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n32/cells.npz": "a8bb9ded26ec599982b3ef80ee1e7606b65e6e8758a07a02be9eba3b8660d621"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-expansion-F11-n64",
+    "method": "netbounds-q1-expansion",
+    "target": "F11",
+    "n": 64,
+    "result_path": "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n64/result.json",
+    "artifacts": {
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n64/result.json": "8ca838197093e2d84100a486c56583a114014d9a488a76358358bfe2df09cf0c",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n64/diagnostics.json": "933105318cf21681ae1259f68481a0c6162b7a715e64053a04bfab9ecf63c9a1",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n64/cells.npz": "2f6931e40f701e6acd127dd378a3a79cc3893ff00a0243de7d75bf0fa59e21c0"
+    }
+  },
+  {
+    "case_id": "netbounds-q1-expansion-F11-n8",
+    "method": "netbounds-q1-expansion",
+    "target": "F11",
+    "n": 8,
+    "result_path": "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n8/result.json",
+    "artifacts": {
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n8/result.json": "77773f4602ce37f94f348c7e1e78efd5ff30cf1574f2b30e0074b4faa00a3bbe",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n8/diagnostics.json": "ec643b3466df5a63e7a5e6e2acf68dceca2cb08c7a02b6776f70f66ee4c1c66a",
+      "results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n8/cells.npz": "3bf119aeb5db6980b316739756734b1e0bbaec62b2444d99626f99fb1b99db58"
+    }
+  }
+]

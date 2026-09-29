@@ -1,0 +1,69 @@
+{
+  "cells_checked": 1024,
+  "points_per_cell": 9,
+  "point_evaluations": 9216,
+  "strict_violating_points": 0,
+  "tolerance_violating_points": 0,
+  "maximum_signed_excess": -0.004049407797524385,
+  "largest_observed": 5.037360352488967,
+  "witness": [
+    1.0,
+    0.09375
+  ],
+  "atol": 1e-10,
+  "rtol": 1e-09,
+  "affects_bound": false,
+  "soundness_proof": false,
+  "native_replay": {
+    "cells": [
+      0,
+      995,
+      1023
+    ],
+    "endpoint_replay": [
+      {
+        "cell": 0,
+        "max_abs_endpoint_gap": 0.0
+      },
+      {
+        "cell": 995,
+        "max_abs_endpoint_gap": 0.0
+      },
+      {
+        "cell": 1023,
+        "max_abs_endpoint_gap": 0.0
+      }
+    ],
+    "lines_checked": 10752,
+    "strict_positive_line_excesses": 429,
+    "failed_lines": 0,
+    "maximum_line_excess": 3.3306690738754696e-16,
+    "failures": [],
+    "scope": "selected cells only",
+    "affects_bound": false
+  },
+  "diagnostics_cpu_seconds": 0.7574765749999983,
+  "numerical_artifacts_unchanged": true,
+  "numerical_artifact_sha256": {
+    "result.json": "f5f61ce0922daf547157c634df6d9777c5f6af572beac248e043dcdd6ef3724c",
+    "cells.npz": "16b657373bdda643efd0582440c311969161c8f6bfc933484738fc85443de074"
+  },
+  "campaign_read_paths": [
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n32/cells.npz",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-20260928-v1/rows/partial-crown-F11-n32/result.json",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-20260928-v1/sources/harness/crown_benchmark/__init__.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-20260928-v1/sources/harness/crown_benchmark/__pycache__/__init__.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-20260928-v1/sources/harness/crown_benchmark/__pycache__/envelope_audit.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-20260928-v1/sources/harness/crown_benchmark/__pycache__/models.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-20260928-v1/sources/harness/crown_benchmark/__pycache__/partial.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-20260928-v1/sources/harness/crown_benchmark/__pycache__/types.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-20260928-v1/sources/harness/crown_benchmark/envelope_audit.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-20260928-v1/sources/harness/crown_benchmark/models.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-20260928-v1/sources/harness/crown_benchmark/partial.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-20260928-v1/sources/harness/crown_benchmark/types.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-20260928-v1/sources/harness/independent_benchmark/__pycache__/cpu_clock.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-20260928-v1/sources/harness/independent_benchmark/cpu_clock.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-20260928-v1/sources/harness/model_weights/heat_1d_separable_L2_W128_netbounds.pt",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-20260928-v1/sources/harness/model_weights/manifest.json"
+  ]
+}

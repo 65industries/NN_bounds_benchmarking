@@ -1,0 +1,16 @@
+{
+  "coordinate": 1,
+  "point_evaluations": 66049,
+  "grid_nodes_per_axis": 257,
+  "observed_maximum": 5.039934078499935,
+  "signed_value": 5.039934078499935,
+  "witness": [
+    1.0,
+    0.09765625
+  ],
+  "reference_cpu_seconds": 0.7936393330000002,
+  "reference_type": "independent nested autograd on raw forward",
+  "is_upper_bound": false,
+  "checkpoint_sha256": "fb1f6f1d8dc628c84f561a05b0f5c9b2ef1537d93be4fac8c427f13c722efb68",
+  "pid": 1681990
+}
