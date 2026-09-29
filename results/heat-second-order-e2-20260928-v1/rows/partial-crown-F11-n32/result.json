@@ -1,0 +1,636 @@
+{
+  "case_id": "partial-crown-F11-n32",
+  "method": "partial-crown",
+  "coordinate": 1,
+  "n": 32,
+  "cells": 1024,
+  "cell_evaluations": 1024,
+  "native_calls": 1024,
+  "bound": 5.112735714087488,
+  "signed_lower": 0.23844910543985642,
+  "signed_upper": 5.112735714087488,
+  "max_cell": 995,
+  "max_cell_center": [
+    0.984375,
+    0.109375
+  ],
+  "epsilon": [
+    0.015625,
+    0.015625
+  ],
+  "bounding_cpu_seconds": 115.11006201900001,
+  "bounding_wall_seconds": 115.4614805271849,
+  "checkpoint_loading_cpu_seconds": 0.29037260600000003,
+  "backend_setup_cpu_seconds": 0.32742554299999993,
+  "checkpoint": {
+    "file": "heat_1d_separable_L2_W128_netbounds.pt",
+    "kind": "copied NetBounds 1D Heat checkpoint",
+    "source_path": "/home/vincent/repos/NetBounds/trained_models/Heat/1d_separable/num_layers2_width128/num_layers2_width128_weights.pt",
+    "source_repo": "65industries/NetBounds-dev (local checkout /home/vincent/repos/NetBounds)",
+    "source_commit": "89a18fc5a937b26541dd3def2fb3757f18c17a4a",
+    "architecture": [
+      2,
+      128,
+      128,
+      1
+    ],
+    "activation": "tanh after every hidden affine layer; linear output",
+    "dtype": "torch.float32",
+    "sha256": "fb1f6f1d8dc628c84f561a05b0f5c9b2ef1537d93be4fac8c427f13c722efb68",
+    "bytes": 71569,
+    "input_dim": 2,
+    "output_dim": 1,
+    "path": "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-20260928-v1/sources/harness/model_weights/heat_1d_separable_L2_W128_netbounds.pt",
+    "manifest_path": "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-20260928-v1/sources/harness/model_weights/manifest.json",
+    "storage_dtype": "torch.float32",
+    "execution_dtype": "torch.float64",
+    "device": "cpu",
+    "frozen": true,
+    "state_dict_layout": "hidden_layers.N.{weight,bias}; output_layer.{weight,bias}"
+  },
+  "backend": {
+    "upstream_url": "https://github.com/fgirbal/partial_crown",
+    "upstream_commit": "161377048ee92b4c09faf5ce41628168c7e01556",
+    "upstream_path": "/home/vincent/.local/share/nn-crown-benchmark/upstream/partial_crown",
+    "upstream_tracked_clean": true,
+    "source_sha256": {
+      "pinn_verifier/activations/activation_relaxations.py": "0e38ec5edbd3a64f3742dd68f7279465111cd06578e42ff5795db4a0a939054d",
+      "pinn_verifier/activations/tanh.py": "7098ba2dd00e5c04b2ea89592af564435111dd47ec5911f726ef0530422f458e",
+      "pinn_verifier/crown.py": "76772a4f583c75b3be272e9c891c75a164821213240a6ed07feaf4a70ca2669f"
+    },
+    "runtime_source_sha256": {
+      "pinn_verifier/activations/activation_relaxations.py": "b2115220c7bb801acd75e22a0ee5eafa7e217926ac30989412139da5b5cac44d",
+      "pinn_verifier/activations/tanh.py": "481c9347536d271895fa6792ef59ca31e5b2efb460216ad2d391c902496ebdb6",
+      "pinn_verifier/crown.py": "0fb76a40333171859f029a1d5084fcd271a1a6ca225261fd16eef758a940702f"
+    },
+    "patches": [
+      {
+        "file": "pinn_verifier/activations/activation_relaxations.py",
+        "old": "import gurobipy as grb",
+        "new": "# Optional Gurobi unavailable; annotations postponed.",
+        "count": 1,
+        "reason": "optional import; LP entry points fail explicitly"
+      },
+      {
+        "file": "pinn_verifier/activations/activation_relaxations.py",
+        "line": 34,
+        "old": "pdb.set_trace",
+        "new": "_debug_trap",
+        "count": 1,
+        "reason": "fail closed rather than interactive debugger"
+      },
+      {
+        "file": "pinn_verifier/activations/activation_relaxations.py",
+        "old": "",
+        "new": "from __future__ import annotations\n",
+        "count": 1,
+        "reason": "defer optional Gurobi type annotations"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "old": "import gurobipy as grb",
+        "new": "# Optional Gurobi unavailable; annotations postponed.",
+        "count": 1,
+        "reason": "optional import; LP entry points fail explicitly"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "old": "from .activation_relaxations import ActivationRelaxation, ActivationRelaxationType, line_type",
+        "new": "# Activation classes injected from the private authors module.",
+        "count": 1,
+        "reason": "private import namespace"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "old": "np.Inf",
+        "new": "np.inf",
+        "count": 4,
+        "reason": "NumPy 2 spelling compatibility"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 629,
+        "old": "pdb.set_trace",
+        "new": "_debug_trap",
+        "count": 1,
+        "reason": "fail closed rather than interactive debugger"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 511,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 510,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 505,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 496,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 489,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 488,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 372,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 331,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 330,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 194,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 194,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 130,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 130,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 102,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 102,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 67,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 67,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 44,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "line": 44,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/activations/tanh.py",
+        "old": "",
+        "new": "from __future__ import annotations\n",
+        "count": 1,
+        "reason": "defer optional Gurobi type annotations"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "old": "from tools.custom_torch_modules import Add, Mul",
+        "new": "# Unsupported normalization sentinels injected; raw MLPs only.",
+        "count": 1,
+        "reason": "optional ONNX/custom-module import; no normalization is permitted"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "old": "from pinn_verifier.activations.activation_relaxations import ActivationRelaxationType, ActivationRelaxation",
+        "new": "# Activation classes injected from the private authors module.",
+        "count": 1,
+        "reason": "private import namespace"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "old": "self.input_dimension = 2",
+        "new": "self.input_dimension = model[0].in_features",
+        "count": 1,
+        "reason": "input dimension from the actual first Linear"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "old": "assert domain_bounds.shape[1] == self.input_dimension",
+        "new": "assert domain_bounds.shape[1] == 2",
+        "count": 1,
+        "reason": "endpoint axis is always 2, distinct from input dimension"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 1878,
+        "old": "pdb.set_trace",
+        "new": "_debug_trap",
+        "count": 1,
+        "reason": "fail closed rather than interactive debugger"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 1831,
+        "old": "pdb.set_trace",
+        "new": "_debug_trap",
+        "count": 1,
+        "reason": "fail closed rather than interactive debugger"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 1612,
+        "old": "torch.Tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 1602,
+        "old": "torch.Tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 1545,
+        "old": "torch.tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 1532,
+        "old": "torch.zeros",
+        "new": "_adapter_zeros",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 1254,
+        "old": "torch.zeros",
+        "new": "_adapter_zeros",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 1219,
+        "old": "pdb.set_trace",
+        "new": "_debug_trap",
+        "count": 1,
+        "reason": "fail closed rather than interactive debugger"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 1171,
+        "old": "pdb.set_trace",
+        "new": "_debug_trap",
+        "count": 1,
+        "reason": "fail closed rather than interactive debugger"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 1012,
+        "old": "torch.Tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 998,
+        "old": "torch.zeros",
+        "new": "_adapter_zeros",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 997,
+        "old": "torch.zeros",
+        "new": "_adapter_zeros",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 954,
+        "old": "torch.zeros",
+        "new": "_adapter_zeros",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 952,
+        "old": "torch.zeros",
+        "new": "_adapter_zeros",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 821,
+        "old": "pdb.set_trace",
+        "new": "_debug_trap",
+        "count": 1,
+        "reason": "fail closed rather than interactive debugger"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 719,
+        "old": "pdb.set_trace",
+        "new": "_debug_trap",
+        "count": 1,
+        "reason": "fail closed rather than interactive debugger"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 532,
+        "old": "torch.zeros",
+        "new": "_adapter_zeros",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 508,
+        "old": "pdb.set_trace",
+        "new": "_debug_trap",
+        "count": 1,
+        "reason": "fail closed rather than interactive debugger"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 499,
+        "old": "pdb.set_trace",
+        "new": "_debug_trap",
+        "count": 1,
+        "reason": "fail closed rather than interactive debugger"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 469,
+        "old": "pdb.set_trace",
+        "new": "_debug_trap",
+        "count": 1,
+        "reason": "fail closed rather than interactive debugger"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 387,
+        "old": "torch.Tensor",
+        "new": "_adapter_tensor",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 383,
+        "old": "pdb.set_trace",
+        "new": "_debug_trap",
+        "count": 1,
+        "reason": "fail closed rather than interactive debugger"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 282,
+        "old": "torch.ones",
+        "new": "_adapter_ones",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 281,
+        "old": "torch.ones",
+        "new": "_adapter_ones",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 268,
+        "old": "torch.eye",
+        "new": "_adapter_eye",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 265,
+        "old": "torch.eye",
+        "new": "_adapter_eye",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 262,
+        "old": "torch.zeros",
+        "new": "_adapter_zeros",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 261,
+        "old": "torch.zeros",
+        "new": "_adapter_zeros",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 258,
+        "old": "torch.zeros",
+        "new": "_adapter_zeros",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 257,
+        "old": "torch.zeros",
+        "new": "_adapter_zeros",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 214,
+        "old": "torch.ones",
+        "new": "_adapter_ones",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 213,
+        "old": "torch.ones",
+        "new": "_adapter_ones",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 200,
+        "old": "torch.eye",
+        "new": "_adapter_eye",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 197,
+        "old": "torch.eye",
+        "new": "_adapter_eye",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 194,
+        "old": "torch.zeros",
+        "new": "_adapter_zeros",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 193,
+        "old": "torch.zeros",
+        "new": "_adapter_zeros",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 190,
+        "old": "torch.zeros",
+        "new": "_adapter_zeros",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "line": 189,
+        "old": "torch.zeros",
+        "new": "_adapter_zeros",
+        "count": 1,
+        "reason": "explicit float64 coefficient factory"
+      },
+      {
+        "file": "pinn_verifier/crown.py",
+        "old": "",
+        "new": "from __future__ import annotations\n",
+        "count": 1,
+        "reason": "defer optional Gurobi type annotations"
+      }
+    ],
+    "license_note": "upstream setup.py declares MIT; no root LICENSE file at pinned revision",
+    "method": "partial-crown",
+    "mathematical_patches": [],
+    "backprop_modes": [
+      "FULL_BACKPROP",
+      "COMPONENT_BACKPROP",
+      "COMPONENT_BACKPROP"
+    ],
+    "relaxation_type": "SINGLE_LINE",
+    "repair_variant": null,
+    "outward_rounded": false
+  },
+  "pid": 1681254,
+  "finished_numerics_utc": "2026-09-28T19:11:25.627275+00:00",
+  "grid_convention": "n cell centers per axis, n^2 closed cells, radius 1/(2*n)",
+  "stop_reason": "complete_uniform_grid",
+  "cpu_ceiling": null,
+  "timing": "process user+system; grid construction, native bounds and max reduction only; no imports, model loading, backend/relaxation setup, I/O, independent checks or replay",
+  "precision": "float64; native parameters copied without value changes; no outward rounding"
+}

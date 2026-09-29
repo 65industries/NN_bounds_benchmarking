@@ -1,0 +1,151 @@
+{
+  "policy": "Native mathematics unchanged; portable import/metadata/coordination changes tracked separately.",
+  "source_report_sha256": "d9f3d9c276f3a061667b1cf327b5676f573cf4c31f6d589701282a66f4dfb254",
+  "files": [
+    {
+      "path": "crown_benchmark/models.py",
+      "source": "results/heat-second-order-e2-20260928-v1/sources/harness/crown_benchmark/models.py",
+      "source_sha256": "fca01327da8b7bbc61762a9c759b0f798d173ed2261a2d018bb7831e96b972be",
+      "extraction": "whole file"
+    },
+    {
+      "path": "crown_benchmark/types.py",
+      "source": "results/heat-second-order-e2-20260928-v1/sources/harness/crown_benchmark/types.py",
+      "source_sha256": "a8557b03a66b8e1442220a597e9a001ff60bee6e5f446858820b80595087c8ef",
+      "extraction": "whole file"
+    },
+    {
+      "path": "crown_benchmark/partial.py",
+      "source": "results/heat-second-order-e2-20260928-v1/sources/harness/crown_benchmark/partial.py",
+      "source_sha256": "68b52da8b49892abee1fd77d4105c045e4f43dcd6ff9aebb57f433345fed821d",
+      "extraction": "whole file"
+    },
+    {
+      "path": "crown_benchmark/envelope_audit.py",
+      "source": "results/heat-second-order-e2-20260928-v1/sources/harness/crown_benchmark/envelope_audit.py",
+      "source_sha256": "b5b2f7cbe6435e5703402d09d3e589257da9f9d5b842fb3841b2c40c6c3f2bb3",
+      "extraction": "whole file"
+    },
+    {
+      "path": "netbounds_benchmark/adapter.py",
+      "source": "results/heat-second-order-e2-20260928-v1/sources/harness/netbounds_benchmark/adapter.py",
+      "source_sha256": "4bad3570e9396be0ee5269e593b27be25249dddf920be2034e6ff10f38e24aa6",
+      "extraction": "whole file"
+    },
+    {
+      "path": "netbounds_benchmark/uniform_q1.py",
+      "source": "results/heat-second-order-e2-20260928-v1/sources/harness/netbounds_benchmark/uniform_q1.py",
+      "source_sha256": "fd678798f676dc40264c4399bae77a165c4879859cd2699d37c5542a927d4ddf",
+      "extraction": "whole file"
+    },
+    {
+      "path": "independent_benchmark/cpu_clock.py",
+      "source": "results/heat-second-order-e2-20260928-v1/sources/harness/independent_benchmark/cpu_clock.py",
+      "source_sha256": "85dc0b4e8cc7e6e7252654ce97fecf7f81f55c632b8194f6dec5ff810aeea3ea",
+      "extraction": "whole file"
+    },
+    {
+      "path": "independent_benchmark/crown_affine.py",
+      "source": "results/heat-second-order-e2-20260928-v1/sources/harness/independent_benchmark/crown_affine.py",
+      "source_sha256": "f4cf3d6c340cc1b982545ad933fa9e676d6c01ba453c5eae9944dd0e9ff19348",
+      "extraction": "whole file"
+    },
+    {
+      "path": "independent_benchmark/affine_l2.py",
+      "source": "results/heat-second-order-e2-20260928-v1/sources/harness/independent_benchmark/affine_l2.py",
+      "source_sha256": "d1d9a2fb5e83bb8163d19601f043b1e47dff53b5e8da4054db60f1917d06a987",
+      "extraction": "whole file"
+    },
+    {
+      "path": "netbounds_benchmark/fixed_q1.py",
+      "source": "results/heat-second-order-e2-20260928-v1/sources/harness/netbounds_benchmark/fixed_q1.py",
+      "source_sha256": "a984abc3cf27bcb1d3c0bb8406a5e74a1458f4c94fc9cb41ca4c6c1a7c441906",
+      "extraction": "verbatim top-level definitions; unrelated entry points/imports omitted",
+      "symbols": [
+        "grid_centers",
+        "evaluate_fixed_grid"
+      ]
+    },
+    {
+      "path": "independent_benchmark/second_derivative.py",
+      "source": "results/heat-second-order-e2-20260928-v1/sources/harness/independent_benchmark/second_derivative.py",
+      "source_sha256": "97166278403bdf8b132dc91287fa78e06f4450353e97bd9de14a2280c936737b",
+      "extraction": "verbatim top-level definitions; unrelated entry points/imports omitted",
+      "symbols": [
+        "METHOD_POLICY",
+        "grid_reduction",
+        "run_netbounds"
+      ]
+    },
+    {
+      "path": "independent_benchmark/l2_norm.py",
+      "source": "results/heat-second-order-e2-20260928-v1/sources/harness/independent_benchmark/l2_norm.py",
+      "source_sha256": "5b1910d8d4000e5d5870f9409e54fd3ba2eafec238ba17d9aad53cb1088b323c",
+      "extraction": "verbatim top-level definitions; unrelated entry points/imports omitted",
+      "symbols": [
+        "reference_l2"
+      ]
+    },
+    {
+      "path": "independent_benchmark/minimal_affine_l2_native.py",
+      "source": "results/heat-l2-matched-20260928-v1/sources/harness/independent_benchmark/minimal_affine_l2_native.py",
+      "source_sha256": "dc195a6992427c7a6ad41f820a10ff12d7e884fe2f2ce4a273a35ff23531effd",
+      "extraction": "verbatim top-level definitions; unrelated entry points/imports omitted",
+      "symbols": [
+        "_finite_scalar",
+        "_pair",
+        "_value",
+        "_clip",
+        "_square",
+        "cell_integrals",
+        "_cell_integrals"
+      ]
+    },
+    {
+      "path": "reproducers/heat_second_order_e_comparison.py",
+      "source": "results/heat-second-order-e2-20260928-v1/sources/harness/reproducers/heat_second_order_e_comparison.py",
+      "source_sha256": "fe0d1b80a6f6bdb9693b8f0562afe0ea6ed5c57c129a1bf5be33588e6b983b53",
+      "extraction": "verbatim top-level definitions; unrelated entry points/imports omitted",
+      "symbols": [
+        "digest",
+        "save",
+        "cpu",
+        "now",
+        "grid",
+        "partial_setup",
+        "partial_call",
+        "netbounds_setup",
+        "netbounds_call",
+        "install_read_guard",
+        "diagnose",
+        "RecordRelaxation",
+        "replay_partial",
+        "run_row",
+        "run_reference"
+      ]
+    },
+    {
+      "path": "reproducers/heat_second_order_q1_comparison.py",
+      "source": "results/heat-second-order-q1-matched-20260928-v1/sources/harness/reproducers/heat_second_order_q1_comparison.py",
+      "source_sha256": "f299cd22828f125628afd524ef29d56eeefaf7fffcb7a9895e8e68498e5c91c0",
+      "extraction": "verbatim top-level definitions; unrelated entry points/imports omitted",
+      "symbols": [
+        "helpers",
+        "run_row"
+      ]
+    },
+    {
+      "path": "reproducers/heat_l2_matched_comparison.py",
+      "source": "results/heat-l2-matched-20260928-v1/sources/harness/reproducers/heat_l2_matched_comparison.py",
+      "source_sha256": "2187a65246ff30ddf86d416d57a926a92924ee9ece6b0edd28a6bae754ecb5f6",
+      "extraction": "verbatim top-level definitions; unrelated entry points/imports omitted",
+      "symbols": [
+        "helpers",
+        "reduce_q1",
+        "target_values",
+        "point_diagnostics",
+        "run_row"
+      ]
+    }
+  ]
+}

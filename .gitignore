@@ -1,2 +1,9 @@
 # Local dcrown workspace
 dcrown/
+
+# Local environments and fresh reproduction runs (published results stay tracked)
+.venv/
+runs/
+__pycache__/
+*.py[cod]
+.pytest_cache/

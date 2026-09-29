@@ -1,0 +1,208 @@
+[
+  {
+    "path": "crown_benchmark/models.py",
+    "retained_definitions": {
+      "ExactSecondDerivative": "34914bc544fdb6da4672fa60a8d6ade44117840169f087a1233201a14040ace5",
+      "LoadedCheckpoint": "b793b42ffa3ac277ab297d7b1a61b1e79553776248617f08d83de1a2c1f12bc7",
+      "_architecture": "c57cc6ff8305cb150e4e50a899ba6e60e91f002fa6aa37f71beb12ba39dc8d3a",
+      "_coordinate": "1cded0fee8a92148fbd186a7de887ee766dbb4fad8cc602e6cf4449f894eadbb",
+      "_copied_linear": "f3c670fc87460a0be502710576c1c9665a77be6b05187a9e4ba56c68bb777181",
+      "_finite_json_float": "18df99b836911b64848db9a04a545d4c2f88ca60e83380eac83671247e8e047b",
+      "_float64_reference_copy": "3a222bed778f6bbbeb787e561bd8d0d44899fa8f62238fa567875a9cae1d7641",
+      "_layers": "9351e00c2eba6c8f09fce5e42a3d39da5a4ff0ed9d5cc019db49943aba557816",
+      "_manifest_entry": "9947d9fcf271f0be8143650959a92b80bc44b44575c7b9bba485cf81f12de312",
+      "_nested_autograd_second": "cd0dc908d9dde53ea63b474556913477ba5adc5a58f8e06647bad863aacb1c70",
+      "_reject_json_constant": "3b1a3967f8e485b061bab00980d481f8d2e98b75c961c7c142f44f206c44fb42",
+      "_unique_json_object": "9cf94a233545eec3d671fc3f9ef7efe38cb83e9edcf2a54cc54bc35cdb8a21d1",
+      "load_checkpoint": "c4edcf1295db80ee7da5d9aac4ab15b0dcc1eadaf47b89d54cdb10047653173d",
+      "validate_derivatives": "15dff912e96a1ff18875040d376206a4db9b82192f681491828098c105c50e94",
+      "validate_scalar_model": "15cd8d9e86314740a21bc70d2c8be3ee5aaace57f1430779687d4e6195945f15"
+    },
+    "portability_only_changed_definitions": [],
+    "packaged_sha256": "fca01327da8b7bbc61762a9c759b0f798d173ed2261a2d018bb7831e96b972be"
+  },
+  {
+    "path": "crown_benchmark/types.py",
+    "retained_definitions": {
+      "BoundBatch": "6a54c49142fef92caf2335157822c06221fb0471d94ae39e3b10b6dafaf3b86c",
+      "BoundFailure": "ab8629c79a1db7592dd3e8e2cbe53da57207408a1e63beea2f28f13c2efb1776",
+      "validate_boxes": "8c8bbee60d6db8d9e0214ae18050d4a96e7ae3d13340d3096b5585109d10c5f5"
+    },
+    "portability_only_changed_definitions": [],
+    "packaged_sha256": "a8557b03a66b8e1442220a597e9a001ff60bee6e5f446858820b80595087c8ef"
+  },
+  {
+    "path": "crown_benchmark/partial.py",
+    "retained_definitions": {
+      "PartialCrownAdapter": "debc74c52eb11e510b44b93de0e89fbe334ca8e013856f7a75645e3d2ae0dccf",
+      "_AddUnavailable": "363c79be5f184b7f26e47d3a23a6fbf1293d1e9922bc1a8b447beea1d2665515",
+      "_AuditedRelaxation": "f69e23a77249b5e975ecdcf8e6632a68c5e51c8c9644108a55cd771530dcbfa0",
+      "_MulUnavailable": "2164674fa99e42ff7383a7a695ca2c1f90aae24c019601181502bd57ec2cd35b",
+      "_UnavailableGurobi": "b43e45e1c0adf6d567dc9ba71a0b879daa4ff7b032eae5afe52a3d0bcf13c738",
+      "_debug_trap": "4f5a4c5465111152a3a910dc13da61f7c986f2d7fd5f01a90ee9173509eb3ab9",
+      "_floating_tensors": "0eadf95a03cb9690f0904129b3725e87766af4692d62f6b9def4001165d59c0f",
+      "_unavailable": "c091a7de6878dd0672e665adfb23223ee619e0edea891c6b9ae40e2f0569018a"
+    },
+    "portability_only_changed_definitions": [
+      "_upstream_path",
+      "load_authors"
+    ],
+    "packaged_sha256": "774030dc0374684031a7a17da519bdf440a01d51076c4ce4ec85263938443902"
+  },
+  {
+    "path": "crown_benchmark/envelope_audit.py",
+    "retained_definitions": {
+      "EnvelopeAudit": "5b7852016bd63da643ea6d343d7c953083b95310de57fa39a1e57bb001a21bfc",
+      "EnvelopeViolation": "9b05a00749df1a666fb4ca7084fa2799a3281c2e2a306951df37f307fc5e9675",
+      "_derivative": "904e28c3f6c7accc71254aafd662818c47277cd12a7ab04d6c5eb76fac3cef21",
+      "_turning_points": "7406c39d13c7efc79cf7b1c1c49342abd0198cec19d73e23c74c64f0b82d1349",
+      "_validate": "c9dac16ab498fd117297d36f5bc21ee13c5d6fe7cf94a1e46aaf145df07cc40a",
+      "activation_value": "149aa20a8b623d5960aebacdf50fc410fd403ba3e4d5d99f715c1f746dae82c2",
+      "audit_envelope": "5d36d9dff9439f00cab61c701fb62994984db0bc6a457eb73bf2df7f342aa416",
+      "audit_line": "9059379cc046859a788de12f44ccef511bb02a1a96942b4c02d1d6ec8607c9ff",
+      "require_valid": "406ba5e9ab309a6dc00f19a2b84d7b12b34d53cffb90277ff10e015c95ab5332",
+      "residual_stationary_points": "fea8ca8e42fcbddf2611b57738aaed301818cddea40d2d4e6cfe784589c4c651"
+    },
+    "portability_only_changed_definitions": [],
+    "packaged_sha256": "b5b2f7cbe6435e5703402d09d3e589257da9f9d5b842fb3841b2c40c6c3f2bb3"
+  },
+  {
+    "path": "netbounds_benchmark/adapter.py",
+    "retained_definitions": {
+      "NetBoundsQ1Adapter": "cde07717817c10f7708d0c5bb34e4feb916fb46ebd6e519dcca860bae1a4207d",
+      "RawMLPView": "c09ad064868f64715923eb22b590d68cafba70835f6a4dee72b48e39d0e2162d",
+      "q1_radius": "4b4199ad7559dfb636ac7c2243706a651a7351eea77702a1fa9293a77f62413f"
+    },
+    "portability_only_changed_definitions": [
+      "load_backend"
+    ],
+    "packaged_sha256": "ac6dff56db765053ec4f6ea20b2985eea2ee5a3e2b514bea951332acb6c965f1"
+  },
+  {
+    "path": "netbounds_benchmark/uniform_q1.py",
+    "retained_definitions": {
+      "RawQ1Integrator": "9d524b905aa26c8c026575fa5d820ed3c9042bd0bc9be3ec1bbeaa7e3337f2b3",
+      "q1_moment_cell": "9c0fa0e36dd34428988aa0a955c50b49190084ec80c4e860626e3053a842d269",
+      "uniform_grid_search": "4afd139e4b7b195ffad9bc67870149256ebe47650103ad4b815c5ddaef587a55"
+    },
+    "portability_only_changed_definitions": [],
+    "packaged_sha256": "fd678798f676dc40264c4399bae77a165c4879859cd2699d37c5542a927d4ddf"
+  },
+  {
+    "path": "independent_benchmark/cpu_clock.py",
+    "retained_definitions": {
+      "CPUClock": "700ffbd53f0bd808c0c3a6f56e4983f866677a2e8d99b5e1a82c26b5655da4a5",
+      "_Mark": "99bbc8204441bc31607d3ba2fc4728c2ff6eedeb144337b2959a66a009b2a319",
+      "active_clock": "5c653a382cc1941cd822fd3a20ddacdd8695c15e3bbaa4c26e9e160e026f6abc",
+      "diagnostic": "aac98b7a5f8a582063305fa7da003bf661af2e521faf8992be45f9bcb9911a76",
+      "excluded": "591daff82b1712269daf3d9bb305e00fa72c440c4852a64b723ce72d5cfa1e51",
+      "numerical_clock": "5348430d14c4f7f4344eb67f9900e52e61331ec552a3434ef56b24b88a005f38"
+    },
+    "portability_only_changed_definitions": [],
+    "packaged_sha256": "85dc0b4e8cc7e6e7252654ce97fecf7f81f55c632b8194f6dec5ff810aeea3ea"
+  },
+  {
+    "path": "independent_benchmark/crown_affine.py",
+    "retained_definitions": {
+      "AffineCrownCell": "7d3e08c5f8d80fa4e30aa682f225be495c4c9cdf41ba47f97315579ebcd0e0e8"
+    },
+    "portability_only_changed_definitions": [],
+    "packaged_sha256": "f4cf3d6c340cc1b982545ad933fa9e676d6c01ba453c5eae9944dd0e9ff19348"
+  },
+  {
+    "path": "independent_benchmark/affine_l2.py",
+    "retained_definitions": {
+      "_box": "f696fe496f012c998725f2dfa0cd08f6a59edb9728fbafecbdd6a40fd7eccc42",
+      "cell_square_integral": "5e00ec2e78e984bf459886803e7d6db7a9b4bfc9a13691b050d211cc68dbaef7",
+      "clip_halfplane": "25553262e2d63910047433275e317e98cdcd640fbb3f2830623595a352bd2646",
+      "integrate_affine_square": "1d8d1c19ed212e7f61a7c9d7f4891d751beb603e017b8075748fc20cd73c5efe",
+      "polygon_area": "002db3a1ef7953731cb9d74362c7c84a924c79635cfdcb767175b695000599f5",
+      "straddles": "f7f278c62438909b26ed48bf206e91dd03fc2ee65cdeab385b75a8453072fbc2"
+    },
+    "portability_only_changed_definitions": [],
+    "packaged_sha256": "d1d9a2fb5e83bb8163d19601f043b1e47dff53b5e8da4054db60f1917d06a987"
+  },
+  {
+    "path": "netbounds_benchmark/fixed_q1.py",
+    "retained_definitions": {
+      "evaluate_fixed_grid": "a1052fa6c90ee8ca0f8c1f7fa65fce3d41271f441b49e453151cbec906746bb2",
+      "grid_centers": "1d703a3a5ceee536678c8bb51d48b0e520640c1ce2237603b64984a1c7644a6f"
+    },
+    "portability_only_changed_definitions": [],
+    "packaged_sha256": "0756ac9d3cf9a98f0759e69fbb4cd8599d7efcf81b9ec044d0f8a891215f1ea0"
+  },
+  {
+    "path": "independent_benchmark/second_derivative.py",
+    "retained_definitions": {
+      "grid_reduction": "3e222cf7c0b138c482dc1fe81be1766fcfba4989644df2d7fd99c8244b2e2803",
+      "run_netbounds": "f8e436c37fe35cfd0a0bfbc7400991818412c3ef1e50417cd7bb089fcde45a8b"
+    },
+    "portability_only_changed_definitions": [],
+    "packaged_sha256": "7029cb4c05cf11bf4ba6f0373e6a1e23bdd5e84c1a1be81fad25b6b5290b80ac"
+  },
+  {
+    "path": "independent_benchmark/l2_norm.py",
+    "retained_definitions": {
+      "reference_l2": "0637efb33c13f6245fd0861e424b8854611db44e5ceb7a3109ed7ff09626743f"
+    },
+    "portability_only_changed_definitions": [],
+    "packaged_sha256": "b6e4acab90e813046d08429e204629dd49abd1f1900daea15f19ab7f1f030553"
+  },
+  {
+    "path": "independent_benchmark/minimal_affine_l2_native.py",
+    "retained_definitions": {
+      "_cell_integrals": "fcd5b7068f75e47e389c71e4183e362e15bf4bac0d72182d7eaf5a08c40bdecb",
+      "_clip": "4fd04267fa94b30d1197bd1540db7dab90f8e2a12bc56ee1baab056d3126ddbc",
+      "_finite_scalar": "038244663f51b3afe3e2804f05428c1f5aa561220d07a5fcc4ac70a5b32ebc0f",
+      "_pair": "b6753f17574cc39cfea720b66c4f7b522da51b66b1e2eab428a682a28b259b33",
+      "_square": "03dc72b582e68dc6ef61818c083c8fbf2018e1d6d428bb2104d23350589859be",
+      "_value": "3b0e6b70bc81f0d67e54888ca253acf30ce3e744264e11a20a2ad5294cb1f606",
+      "cell_integrals": "058abd8cdd13bc92c1273d902691e3e97fab86714d7ab91398a45ac784acf67d"
+    },
+    "portability_only_changed_definitions": [],
+    "packaged_sha256": "80ff08da6e30499f5e494d50342745c949424f97ce4c248da35e0f5a9a9092fb"
+  },
+  {
+    "path": "reproducers/heat_second_order_e_comparison.py",
+    "retained_definitions": {
+      "RecordRelaxation": "26b7fd98648b7514ebcbeb39ff744f324623c6f0d123891491fa93ba059f9d90",
+      "cpu": "e7387eaca502d625f7bf26e6611e8abbb10a502c2eef3f918e19e3cc547c6922",
+      "diagnose": "425a2e8b3ed507937860a7d96c017f55eff86b05bad404bd81714562d06e8fd9",
+      "digest": "54a64936a4cb8b99d56a6f2639b6092899c54b5133f80e087d530988d91602aa",
+      "grid": "ebc8038c18d37938aeab68012eb013fe06b18f6113c1cb4a8659e9007666ec7d",
+      "install_read_guard": "e385849cd7bb8ab3f45234696382dabf2e647e495b559d9b4f60f75a32070867",
+      "netbounds_call": "b0bc52ae6ce73eb4626138ec8752befb6a13167c9be4791bf1d45916f8631760",
+      "netbounds_setup": "bcd1ef0a13ce4d01753165a1d75840d325b6db97f5c4296f946a0f1ba4b7abf6",
+      "now": "657729523cb5c0ead0b1e95551773c0d89eca7b7f361a6f59a6766df30c1b014",
+      "partial_call": "fd4af143a65efec0db546d449da8b2a80cace5936de8a0f7a3a740cee0f5484d",
+      "partial_setup": "575192ddfa357fb2b8f889f2ae47b560470286fd99d840473678b487d5f26711",
+      "replay_partial": "72d30b52e9e991fd8fc7d18bac71342fb9e6a556ea6e4a138eaeba6f9d22c25f",
+      "run_reference": "97fbd9604c118e7ffcb68856d4afbc7d5ffae8f78f2c5f7eb8ac2998867c2bfa",
+      "run_row": "404e046662e6a347d5f2aa409d1f719f9a72d65c9bd9502e3122e6712941b4f5",
+      "save": "c1e5293a01870f4b3f70315f70f20921e81dc83137dc1897481513e7ba4b47d0"
+    },
+    "portability_only_changed_definitions": [],
+    "packaged_sha256": "5516eb2695dd0c2083b08807b82ae99bde3fb9c86bdd64f7f4a40ec2d992a3ba"
+  },
+  {
+    "path": "reproducers/heat_second_order_q1_comparison.py",
+    "retained_definitions": {
+      "helpers": "e592e3075b0e8d4326afde4ae0148d089976ca34411fef738e1a440cfd5d5fb8",
+      "run_row": "38929e72c08a802cdab21e272f3296cb58e92aba89a8ee37576da31b6ab57da3"
+    },
+    "portability_only_changed_definitions": [],
+    "packaged_sha256": "c69ae9e6c0903a58d16cae7eb0959339571ee987d003f3efbc4cc7d44df9f7a5"
+  },
+  {
+    "path": "reproducers/heat_l2_matched_comparison.py",
+    "retained_definitions": {
+      "helpers": "72d01a4093d5815be36acae2223b7cf821b77146806f2e9e4c94c164ebcc039e",
+      "point_diagnostics": "9bf8af82bb5cc8f99be557027da9eba32b21ea51b3668bbb61c7eb7dc9d55370",
+      "reduce_q1": "84aca8e8337e12e8ba455ba74525115aded3c9c12bf88106f310b6aaac30e1ab",
+      "run_row": "9c54f956f0bad4a7d47a151d2f151bb68311583cbc7a7d789fc70feab05b3de3",
+      "target_values": "919475e2edea7c5785da5dc7f4b1be5a3e27bbc3f0c30e5f132903db0667d378"
+    },
+    "portability_only_changed_definitions": [],
+    "packaged_sha256": "77c0aa68edbc6783e4e241cd87fd09417c919083669f728ded5e72b34bfdfce6"
+  }
+]

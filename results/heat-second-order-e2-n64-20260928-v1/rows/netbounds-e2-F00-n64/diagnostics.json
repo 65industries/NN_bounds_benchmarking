@@ -1,0 +1,52 @@
+{
+  "cells_checked": 4096,
+  "points_per_cell": 9,
+  "point_evaluations": 36864,
+  "strict_violating_points": 0,
+  "tolerance_violating_points": 0,
+  "maximum_signed_excess": -0.028061966308197128,
+  "largest_observed": 7.220555939440043,
+  "witness": [
+    0.5859375,
+    0.0
+  ],
+  "atol": 1e-10,
+  "rtol": 1e-09,
+  "affects_bound": false,
+  "soundness_proof": false,
+  "center_max_abs_discrepancy": 1.1546319456101628e-14,
+  "variation_max_signed_excess": -0.02806196630819692,
+  "variation_strict_violating_points": 0,
+  "variation_tolerance_violating_points": 0,
+  "native_replay": {
+    "cells": [
+      0,
+      2368,
+      4095
+    ],
+    "base_max_abs_gap": 2.6645352591003757e-15,
+    "variation_max_abs_gap": 1.3877787807814457e-16
+  },
+  "diagnostics_cpu_seconds": 0.22621064000000013,
+  "numerical_artifacts_unchanged": true,
+  "numerical_artifact_sha256": {
+    "result.json": "ec5169ee1fdd05af726c93c12224c486b9c52865b0b511230433f1fcc28e295d",
+    "cells.npz": "f5e65c81b340d45e39e419ef2359267d3edafcf39f6e1cfa33316505ad46e233"
+  },
+  "campaign_read_paths": [
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-n64-20260928-v1/rows/netbounds-e2-F00-n64/cells.npz",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-n64-20260928-v1/rows/netbounds-e2-F00-n64/result.json",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-n64-20260928-v1/sources/harness/crown_benchmark/__init__.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-n64-20260928-v1/sources/harness/crown_benchmark/__pycache__/__init__.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-n64-20260928-v1/sources/harness/crown_benchmark/__pycache__/models.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-n64-20260928-v1/sources/harness/crown_benchmark/__pycache__/types.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-n64-20260928-v1/sources/harness/crown_benchmark/models.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-n64-20260928-v1/sources/harness/crown_benchmark/types.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-n64-20260928-v1/sources/harness/model_weights/heat_1d_separable_L2_W128_netbounds.pt",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-n64-20260928-v1/sources/harness/model_weights/manifest.json",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-n64-20260928-v1/sources/harness/netbounds_benchmark/__init__.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-n64-20260928-v1/sources/harness/netbounds_benchmark/__pycache__/__init__.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-n64-20260928-v1/sources/harness/netbounds_benchmark/__pycache__/adapter.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-e2-n64-20260928-v1/sources/harness/netbounds_benchmark/adapter.py"
+  ]
+}

@@ -1,0 +1,6 @@
+# Preserve upstream source bytes, including original whitespace.
+vendor/** -whitespace linguist-vendored=true
+# Measured numerical evidence is intentionally tracked, not handwritten code.
+results/** linguist-generated=true
+*.npz binary
+*.pt binary

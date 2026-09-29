@@ -1,0 +1,68 @@
+{
+  "case_id": "partial-crown-affine-l2-F00-n32",
+  "method": "partial-crown-affine-l2",
+  "target": "F00",
+  "coordinate": 0,
+  "n": 32,
+  "checkpoint": {
+    "file": "heat_1d_separable_L2_W128_netbounds.pt",
+    "kind": "copied NetBounds 1D Heat checkpoint",
+    "source_path": "/home/vincent/repos/NetBounds/trained_models/Heat/1d_separable/num_layers2_width128/num_layers2_width128_weights.pt",
+    "source_repo": "65industries/NetBounds-dev (local checkout /home/vincent/repos/NetBounds)",
+    "source_commit": "89a18fc5a937b26541dd3def2fb3757f18c17a4a",
+    "architecture": [
+      2,
+      128,
+      128,
+      1
+    ],
+    "activation": "tanh after every hidden affine layer; linear output",
+    "dtype": "torch.float32",
+    "sha256": "fb1f6f1d8dc628c84f561a05b0f5c9b2ef1537d93be4fac8c427f13c722efb68",
+    "bytes": 71569,
+    "input_dim": 2,
+    "output_dim": 1,
+    "path": "/home/vincent/repos/NN_bounds_benchmarking/results/heat-l2-matched-20260928-v1/sources/harness/model_weights/heat_1d_separable_L2_W128_netbounds.pt",
+    "manifest_path": "/home/vincent/repos/NN_bounds_benchmarking/results/heat-l2-matched-20260928-v1/sources/harness/model_weights/manifest.json",
+    "storage_dtype": "torch.float32",
+    "execution_dtype": "torch.float64",
+    "device": "cpu",
+    "frozen": true,
+    "state_dict_layout": "hidden_layers.N.{weight,bias}; output_layer.{weight,bias}"
+  },
+  "pid": 1702134,
+  "precision": "CPU float64, no outward rounding",
+  "checkpoint_loading_cpu_seconds": 0.33788637099999996,
+  "backend_setup_cpu_seconds": 0.33669737999999994,
+  "threads": 1,
+  "interop_threads": 1,
+  "lower": 4.211045252203451,
+  "upper": 4.247456505091347,
+  "lower_square": 17.732902116105226,
+  "upper_square": 18.040886762642803,
+  "moment_sums": null,
+  "cells": 1024,
+  "native_calls": 1024,
+  "backend": {
+    "native_readout": "AffineCrownCell.affine_bound",
+    "integration": "minimal_affine_l2_native.cell_integrals"
+  },
+  "bounding_cpu_seconds": 118.33860534399977,
+  "bounding_wall_seconds": 182.37660792423412,
+  "inline_diagnostics_cpu_seconds": 63.968437712000224,
+  "epsilon": [
+    0.015625,
+    0.015625
+  ],
+  "stop_reason": "complete_uniform_grid",
+  "cpu_ceiling": null,
+  "finished_numerics_utc": "2026-09-28T20:32:20.665109+00:00",
+  "coverage": {
+    "complete": true,
+    "nonoverlapping": true,
+    "volume_sum_exact": "1",
+    "cell_volume_exact": "1/1024",
+    "adaptive_splits": 0
+  },
+  "timing": "Geometry, native bounds, existing moment/polygon integration, collection, sums and roots. Excludes imports, checkpoint/backend setup, diagnostic spans and serialization. Native internal timers, shape checks and residual bookkeeping remain charged; wall includes inline diagnostics."
+}

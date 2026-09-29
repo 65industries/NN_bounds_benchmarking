@@ -8,3 +8,10 @@ Required attribution: “65industries, NN Bounds Benchmarking Study (2026)” to
 Commercial use is not permitted under CC BY-NC 4.0. For commercial permissions, contact the rights holder.
 
 License text: https://creativecommons.org/licenses/by-nc/4.0/legalcode
+
+Third-party exception: vendor/netbounds/ and vendor/partial_crown/ retain their
+upstream licensing and attribution; they are not relicensed under CC BY-NC 4.0.
+See THIRD_PARTY_NOTICES.md, vendor/netbounds/LICENSE, and the preserved partial_crown
+setup.py MIT declaration and README citation. The pinned partial_crown revision
+has no standalone license text or copyright notice; this limitation is disclosed
+rather than supplying an invented upstream notice.

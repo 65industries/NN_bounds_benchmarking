@@ -1,0 +1,80 @@
+{
+  "cells_checked": 16384,
+  "points_per_cell": 9,
+  "point_evaluations": 147456,
+  "strict_violating_points": 0,
+  "tolerance_violating_points": 0,
+  "maximum_signed_excess": -1.1712484539350143e-05,
+  "largest_observed": 5.039934078499935,
+  "witness": [
+    1.0,
+    0.09765625
+  ],
+  "atol": 1e-10,
+  "rtol": 1e-09,
+  "affects_bound": false,
+  "soundness_proof": false,
+  "center_max_abs_discrepancy": 5.773159728050814e-15,
+  "variation_max_signed_excess": -1.1712484539360551e-05,
+  "variation_strict_violating_points": 0,
+  "variation_tolerance_violating_points": 0,
+  "native_replay": {
+    "cells": [
+      0,
+      16269,
+      16383
+    ],
+    "fields": {
+      "base": {
+        "max_abs_gap": 8.881784197001252e-16,
+        "max_scaled_gap": 4.4102267312819067e-16
+      },
+      "gradient": {
+        "max_abs_gap": 1.0658141036401503e-14,
+        "max_scaled_gap": 2.4361024186440383e-15
+      },
+      "hessian_sup": {
+        "max_abs_gap": 1.7053025658242404e-13,
+        "max_scaled_gap": 1.4827269066042547e-15
+      }
+    }
+  },
+  "diagnostics_cpu_seconds": 1.3064225599999997,
+  "numerical_artifacts_unchanged": true,
+  "numerical_artifact_sha256": {
+    "cells.npz": "a74e54fe411f16082bbba7510b4866a029b48d6ec168e6118803bb34ab79680e",
+    "result.json": "ec5d8e28caead304749301925680218c8a82869ce3bc1f766280e2f37c5811ad"
+  },
+  "campaign_read_paths": [
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n128/cells.npz",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/rows/netbounds-q1-expansion-F11-n128/result.json",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/crown_benchmark/__init__.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/crown_benchmark/__pycache__/__init__.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/crown_benchmark/__pycache__/cli.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/crown_benchmark/__pycache__/models.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/crown_benchmark/__pycache__/provenance.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/crown_benchmark/__pycache__/types.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/crown_benchmark/cli.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/crown_benchmark/models.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/crown_benchmark/provenance.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/crown_benchmark/types.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/independent_benchmark/__pycache__/cpu_clock.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/independent_benchmark/__pycache__/second_derivative.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/independent_benchmark/cpu_clock.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/independent_benchmark/second_derivative.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/model_weights/heat_1d_separable_L2_W128_netbounds.pt",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/model_weights/manifest.json",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/netbounds_benchmark/__init__.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/netbounds_benchmark/__pycache__/__init__.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/netbounds_benchmark/__pycache__/adapter.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/netbounds_benchmark/__pycache__/fixed_q1.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/netbounds_benchmark/__pycache__/uniform_cli.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/netbounds_benchmark/__pycache__/uniform_q1.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/netbounds_benchmark/__pycache__/validation.cpython-311.pyc",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/netbounds_benchmark/adapter.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/netbounds_benchmark/fixed_q1.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/netbounds_benchmark/uniform_cli.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/netbounds_benchmark/uniform_q1.py",
+    "/home/vincent/repos/NN_bounds_benchmarking/results/heat-second-order-q1-matched-20260928-v1/sources/harness/netbounds_benchmark/validation.py"
+  ]
+}
