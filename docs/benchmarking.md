@@ -14,7 +14,7 @@ The NetBounds direct-E2 column evaluates **exactly the requested second-order qu
 
 ```math
 \mathcal E_F^{2e_i}(y,\boldsymbol\varepsilon)
-=|F_{ii}(y)|+\operatorname{Alg}_2(2e_i,F,y,\boldsymbol\varepsilon).\tag{1}
+=|F_{ii}(y)|+\mathrm{Alg}_2(2e_i,F,y,\boldsymbol\varepsilon).\tag{1}
 ```
 
 It does not use the existing benchmark's Q1 affine model or its fourth-network-derivative remainder.
@@ -35,7 +35,7 @@ Thus there are $`n^2`$ cells, with disjoint interiors, covering the entire close
 The half-width vectors are $`(1/16,1/16)`$, $`(1/32,1/32)`$, $`(1/64,1/64)`$ and $`(1/128,1/128)`$ for $`n=8,16,32,64`$.
 For $`n=128`$, each radius is $`1/256`$, with 16,384 cells per derivative. All these cell coordinates are exactly representable in binary64.
 
-Direct E2 returns a centre derivative $`b_{i,C}=F_{ii}(y_C)`$ and a variation radius $`r_{i,C}=\operatorname{Alg}_2(2e_i,F,y_C,\boldsymbol\varepsilon)`$.
+Direct E2 returns a centre derivative $`b_{i,C}=F_{ii}(y_C)`$ and a variation radius $`r_{i,C}=\mathrm{Alg}_2(2e_i,F,y_C,\boldsymbol\varepsilon)`$.
 The reported direct-E2 number is
 
 ```math
@@ -134,7 +134,7 @@ g_i(y_C+z)=g_i(y_C)+\sum_q \partial_qg_i(y_C)z_q+R_{i,C}(z),\qquad
 where
 
 ```math
-H^{(i)}_{qr,C}=|F_{iiqr}(y_C)|+\operatorname{Alg}_4((i,i,q,r),F,y_C,\boldsymbol\varepsilon)
+H^{(i)}_{qr,C}=|F_{iiqr}(y_C)|+\mathrm{Alg}_4((i,i,q,r),F,y_C,\boldsymbol\varepsilon)
 \ge\sup_{x\in C}|F_{iiqr}(x)|.
 ```
 
