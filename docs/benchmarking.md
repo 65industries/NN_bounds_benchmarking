@@ -2,10 +2,10 @@
 
 ## Scope and main distinction
 
-This is a fresh, CPU-only comparison on the raw scalar network $`F:[0,1]^2\to\mathbb R`$ stored in
+CPU-only comparison on the raw scalar network $`F:[0,1]^2\to\mathbb R`$ stored in
 `model_weights/heat_1d_separable_L2_W128_netbounds.pt`.
 The targets are $`F_{00}=\partial_x^2 F`$ and $`F_{11}=\partial_t^2 F`$, with zero-based input coordinates $`(x_0,x_1)=(x,t)`$.
-The supremum targets are not derivatives of the boundary-masked function $`x(1-x)F`$ or PDE residuals. A separate $`L^2`$ section below also bounds the integral norms of $`F`$, $`F_{00}`$ and $`F_{11}`$ on the same cells.
+A separate $`L^2`$ section below also bounds the integral norms of $`F`$, $`F_{00}`$ and $`F_{11}`$ on the same cells.
 The model is $`2\to128\to128\to1`$, with two tanh hidden layers and an affine output.
 
 The NetBounds $`\mathcal E_F^{2e_i}`$ column evaluates **exactly the requested second-order quantity**
@@ -17,8 +17,6 @@ The NetBounds $`\mathcal E_F^{2e_i}`$ column evaluates **exactly the requested s
 =|F_{ii}(y)|+\mathrm{Alg}_2(2e_i,F,y,\boldsymbol\varepsilon).\qquad (1)
 ```
 
-It does not use the existing benchmark's Q1 affine model or its fourth-network-derivative remainder.
-The original independent $`n=8,16,32`$ runs and their references are retained unchanged. The two NetBounds $`n=64`$ rows are also retained unchanged. The retained NetBounds-only $`n=128`$ runs used the identical archived worker, checkpoint, kernels and timing policy. The two ∂-CROWN $`n=64`$ supremum rows are now measured and included below; the $`n=128`$ entries remain pending publication. Ten new NetBounds Q1 rows now evaluate the affine expansion with a quadratic remainder on exactly the same $`n=8,16,32,64,128`$ grids, using the unchanged heat-report producer. All earlier bounds, timings and references are retained, not rerun. No new numerical row reads an earlier numerical result.
 
 ## Grid, reported quantity, and guarantee
 
@@ -47,26 +45,6 @@ The native ∂-CROWN chain returns signed bounds $`L_{i,C}\le F_{ii}(z)\le H_{i,
 ```math
 U_i^{\partial\mathrm C}(n)=\max_C\max(-L_{i,C},H_{i,C}).
 ```
-
-None of the bound columns is merely the maximum of sampled derivatives, the maximum radius alone, or the signed upper endpoint alone.
-
-**Why taking the cell maximum works.** For any $`z\in[0,1]^2`$, choose a covering cell $`C`$.
-The paper's local derivative-difference theorem gives
-$`|F_{ii}(z)|\le |F_{ii}(y_C)|+r_{i,C}\le U_i^{\mathrm{NB}}(n)`$.
-Taking the supremum in $`z`$ proves the global upper-bound claim in exact real arithmetic.
-The same covering argument applies to the signed ∂-CROWN enclosures.
-
-**Numerical qualification.** These implementations use ordinary float64 tensor arithmetic and, for ∂-CROWN, numerical root finding.
-They do not propagate outward-rounded floating-point error bounds.
-Consequently these are evaluations of mathematically certified enclosure constructions, not end-to-end machine-certified upper endpoints.
-The independent checks below provide numerical validation, not a replacement for outward rounding or the theorem.
-Saved float32 weights are converted exactly to float64; the learned parameter values are not changed, but execution is not float32 inference.
-
-## Results and bounding-only CPU time
-
-The bound is smaller-is-tighter; CPU seconds are measured process user-plus-system time, not elapsed wall time or a configured budget.
-Each bound row is one fresh Python process and one complete computation, without an adaptive search, early stopping or CPU ceiling.
-`Cells` gives the $`n^2`$ boxes in the complete uniform cover. Every displayed method processes every cell; no cells are discarded or recomputed in the timed run.
 
 ### $`F_{00}`$
 
@@ -111,16 +89,6 @@ Each bound row is one fresh Python process and one complete computation, without
 - ∂-CROWN is tighter than both NetBounds constructions on 6 of the six matched method/coordinate/grid comparisons at $`n=8,16,32`$. At $`n=64`$, the Q1 expansion is tighter than ∂-CROWN for $`F_{00}`$, while ∂-CROWN is tighter than Q1 for $`F_{11}`$; ∂-CROWN is tighter than $`\mathcal E_F^{2e_i}`$ for both. No $`n=128`$ ∂-CROWN comparison is included yet.
 - Q1 pays for fourth-network-derivative envelopes and is not uniformly tighter: on coarse cells the large remainder envelope can dominate. These prescribed-grid timings are implementation costs, not equal-CPU search outcomes or a convergence-order proof. No minimum/intersection of the two NetBounds constructions is applied.
 
-## Measured ∂-CROWN cost for 64×64
-
-The two 4,096-cell supremum runs have now been measured; these replace the earlier cost projections.
-
-| Target | Bounding CPU (s) | Bounding wall (s) |
-|:---|---:|---:|
-| $`F_{00}`$ | 444.512232 | 444.614991 |
-| $`F_{11}`$ | 438.211375 | 438.270289 |
-
-Both derivatives used **882.723608 CPU seconds** for bounding. Loading, setup, post-run diagnostics and output are excluded.
 
 ## NetBounds Q1 expansion of the second derivative
 
@@ -296,20 +264,4 @@ These integrals are **piecewise-quadratic polygon integrals**, not midpoint or s
 u_C^2-\ell_C^2=(u_C-\ell_C)(u_C+\ell_C),\qquad u_C-\ell_C\ge0.
 ```
 
-Thus the separating set is a line; polygon subdivision and degree-two triangle moments evaluate the integral exactly in real arithmetic. Coincident/degenerate pieces are counted only once.
-
-Native coefficients are read by [`AffineCrownCell`](../independent_benchmark/crown_affine.py). Integration uses the **already existing**, local-coordinate/degeneracy-safe [`cell_integrals`](../independent_benchmark/minimal_affine_l2_native.py), implementing the same square-image rule as [`affine_l2.py`](../independent_benchmark/affine_l2.py) used by the earlier heat-report harness. The publication auditor also compares both integrators on **every returned affine cell**. The older helper has a genuine degenerate-case double count when $`\ell+u\equiv0`$: on the unit square, $`\ell=-1,u=1`$ gives upper squared integral 2 rather than 1. The existing corrected helper avoids this; both implementations agree within the stated audit tolerance (relative $`2\times10^{-10}`$, absolute $`10^{-13}`$ per cell) on this campaign's actual cells. No new ∂-CROWN relaxation, derivative algorithm, optimized slope, or upstream functionality is introduced. This integration is harness-owned, not an authors-released ∂-CROWN $`L^2`$ API.
-
-Affine envelope degree alone does **not** imply second-order convergence of the enclosure width; that requires an appropriate quantitative envelope-gap estimate. No universal convergence rate is inferred from these tables. A zero-straddling enclosure likewise does not prove that the network actually attains zero.
-
-### L2 comparison and validation
-
-- $`F`$: NetBounds has the narrower norm interval on matched grids $`n=16,32,64`$; ∂-CROWN is narrower on $`n=8`$. At $`n=128`$, NetBounds gives [2.45373795439, 2.45377786289]; the same-grid ∂-CROWN result is not included yet.
-- $`F_{xx}`$: NetBounds is narrower on $`n=64`$; ∂-CROWN is narrower on $`n=8,16,32`$. At $`n=128`$, NetBounds gives [4.22952894705, 4.2300396696]; the same-grid ∂-CROWN result is not included yet.
-- $`F_{tt}`$: NetBounds is narrower on $`n=64`$; ∂-CROWN is narrower on $`n=8,16,32`$. At $`n=128`$, NetBounds gives [2.36879805952, 2.36917708261]; the same-grid ∂-CROWN result is not included yet.
-
-The original L2 campaign completed **24 bound rows** and **3 independent reference rows**; for those original rows, all references lie within every corresponding reported interval. All grids match the supremum experiment bit-for-bit. All five NetBounds moment fields were checked by a separate ordered-index moment expansion; all ∂-CROWN cell integrals were cross-checked with the original heat-report polygon routine. There were **625,536 cell-point checks**, with **0 tolerance-level violations** (absolute $`10^{-10}`$ plus relative $`10^{-9}`$). Strict floating-point comparisons detected **38,235 discrepancies**, with maximum signed excess **1.51e-14**. These are reported, not clipped or used to repair endpoints. ∂-CROWN audited **3,096,576 native envelope records**, with no failed cell audit. The flush counter counts recorded line-pairs/ranges, not individual primitive inequalities.
-
-The five newly included $`n=64`$ ∂-CROWN rows (two supremum and three $`L^2`$) add **184,320 cell-point checks**, independently replayed with **zero strict or tolerance-level point discrepancies**. All **12,288 affine cell integrals** were checked against both existing polygon integrators, and the independent reference observations lie within the new bounds. These checks do not provide outward-rounded machine certification.
-
-**Rigor:** the inequalities and integration identities above are exact-real statements conditional on valid local derivative/affine envelopes. The saved numerical endpoints use ordinary float64 without outward rounding; they are **not end-to-end machine-certified**. Finite point checks and agreement of two Gauss rules are diagnostics, not a proof of rounding safety or exact norm values. No bound is tightened by intersection, samples, references, retries, or a prior row.
+Thus the separating set is a line; polygon subdivision and degree-two triangle moments evaluate the integral exactly in real arithmetic.
