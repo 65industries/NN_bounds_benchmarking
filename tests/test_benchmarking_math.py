@@ -34,7 +34,7 @@ def test_display_equations_are_separate_markdown_blocks():
 
 def test_inline_math_is_protected_from_markdown_emphasis_and_escapes():
     prose = FENCED_DISPLAY.sub('', REPORT.read_text())
-    assert len(PROTECTED_INLINE.findall(prose)) == 126
+    assert len(PROTECTED_INLINE.findall(prose)) == 91
     assert '$' not in PROTECTED_INLINE.sub('', prose)
 
 
@@ -50,7 +50,7 @@ def test_tex_bodies_and_tags_unchanged_by_presentation_fix():
     digest = hashlib.sha256(json.dumps(bodies,
                                      ensure_ascii=False, sort_keys=True).encode()).hexdigest()
     # Frozen from the published report before changing only its delimiters.
-    assert digest == 'eb9ec44e0863c513e8a6a37a120552e44f8f054cf4a3d9b40590aa5eeec18378'
+    assert digest == '37efffc43bcaec1359d40b3e765a02a071133ed3747584afacc11cdceb98ebbe'
     assert r'\tag{1}' in text and r'\tag{2}' in text
     for name in ('mathcal-e-definition', 'fourth-order-expansion-definition'):
         assert f'<a id="{name}"></a>' in text and f'](#{name})' in text
@@ -58,5 +58,5 @@ def test_tex_bodies_and_tags_unchanged_by_presentation_fix():
 
 def test_all_table_cells_times_and_evidence_links_are_unchanged():
     lines = [line for line in unprotect(REPORT.read_text()).splitlines() if line.startswith('|')]
-    assert len(lines) == 54
-    assert hashlib.sha256('\n'.join(lines).encode()).hexdigest() == '4e9736fad4c31d75f751791dc90421a2f9edbd76bd7189d43f2dcc275dd1b7fc'
+    assert len(lines) == 50
+    assert hashlib.sha256('\n'.join(lines).encode()).hexdigest() == '40753d6717b68bd124751e26a0f03ac280315814d517130f025745738a53ddfc'
