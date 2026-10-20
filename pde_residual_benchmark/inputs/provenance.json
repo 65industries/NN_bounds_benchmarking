@@ -1,0 +1,14 @@
+{
+  "checkpoint_sha256": "514531c1d38d138b053de85842e4c4a92de0bc82a629d448437ad1c8b5028ba6",
+  "checkpoint_bytes": 139034,
+  "retained_sha256": {
+    "metadata.json": "6fc840df1461479002ff273d8ef184b87c3e62988cd2a92e3bb42cc0f49c92b2",
+    "master.md": "09ce898d0d8280c62b47dc30438c39b3e092e53d8bbd9ef700081eb21f2fc42d",
+    "netbounds_q0.json": "3d81f5abab8c65232cfea1728198874e775b971f2093923f2cd6d80acba98469",
+    "netbounds_q1.json": "cea0deffb99f3dcd2df2f5584eb3143fb044cb7be82b50c4e500afedfc0d2fe5",
+    "adaquad_dense_ibp.json": "30ba5d2dba86a0c4eee3764f9e9be0c2d0eb4f0a23c9a6c0e4eee2ee22fcfe67",
+    "adaquad_dense_recurjac.json": "856c0c58dad73b6dabc2ab5392bd21b3038115bcff7a984187edfd3a04430167"
+  },
+  "source_tree": "c1611650315e67cba47c8728e503fa9b182870a7",
+  "new_source_base": "436ca913979fd41befb51dc74d9af1fa5974e50b"
+}
