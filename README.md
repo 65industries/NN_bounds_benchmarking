@@ -2,6 +2,8 @@
 
 [**Read the matched-grid benchmark report**](docs/benchmarking.md) · [Reproduction details](docs/reproduction.md) · [Third-party attribution](THIRD_PARTY_NOTICES.md)
 
+**Separate Heat1 PDE-residual extension:** [same-checkpoint uniform comparison](pde_residual_benchmark/heat1_uniform_comparison.md) · [run/replay guide](pde_residual_benchmark/README.md). This adds fresh ∂-CROWN residual rows alongside retained NetBounds/AdaQuad results; the original pure-network report and its 60 computations below are unchanged.
+
 This checkout reproduces the report's **55 bound computations and 5 independent reference computations** for the saved `2 → 128 → 128 → 1` tanh network on `[0,1]²`:
 
 - Direct second-order NetBounds supremum bounds for `Fxx` and `Ftt`.
@@ -9,7 +11,7 @@ This checkout reproduces the report's **55 bound computations and 5 independent 
 - Released **∂-CROWN** second-derivative bounds and native-affine-pair L2 integration by the benchmark harness.
 - NetBounds grids `n=8,16,32,64,128`; published ∂-CROWN grids `n=8,16,32,64`.
 
-**Pure neural-network computations only:** no training, PDE residuals, boundary masks, or solver calls. The heat label identifies the checkpoint's origin, not a PDE computation performed here. The earlier model files already present on `main` are retained, but this reproduction selects only the named heat checkpoint.
+**Original reproduction scope — pure neural-network computations only:** no training, PDE residuals, boundary masks, or solver calls. The heat label identifies the checkpoint's origin, not a PDE computation performed by that reproduction. The earlier model files already present on `main` are retained, but the original reproduction selects only the named heat checkpoint. The separately linked PDE extension explicitly selects the PDEbenchmarking checkpoint instead.
 
 The computations use ordinary CPU float64 and are **not outward-rounded machine certificates**. References and point checks are diagnostics. CPU times in the report are historical measurements; fresh runs measure fresh times, which depend on hardware and load.
 

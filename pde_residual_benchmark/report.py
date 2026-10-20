@@ -14,6 +14,23 @@ from independent_benchmark.minimal_affine_l2_native import cell_integrals
 from independent_benchmark.affine_l2 import cell_square_integral
 
 
+def recorded_locations(execution,receipt,case_id):
+    """Interpret archived read paths without rewriting immutable receipts.
+
+    Exact commands bind the recorded source/row roots even after a source archive
+    or GitHub checkout has moved. This is reporting-only path admission.
+    """
+    command=execution['command']
+    expected=[receipt['runtime']['executable'],'-B','-W','ignore','-m',
+              'pde_residual_benchmark','_worker',case_id,'--campaign']
+    if len(command)!=10 or command[:9]!=expected:
+        raise ValueError('Execution is not the declared owned numerical worker')
+    campaign=Path(command[9])
+    if not campaign.is_absolute() or '..' in campaign.parts:
+        raise ValueError('Recorded campaign path must be absolute and normalized')
+    return campaign/'sources',campaign/'rows'/case_id
+
+
 def audit(output):
     output=Path(output).resolve();m=load(output/'manifest.json');done=load(output/'complete.json')
     expected=case_matrix(m['selection']=='qualification-n8')
@@ -32,6 +49,9 @@ def audit(output):
             raise ValueError('Changed row/checkpoint/source identity')
         if execution['returncode']!=0 or not execution['exact_child_wait4'] or execution['pid']!=receipt['pid']:
             raise ValueError('No matching successful owned child exit')
+        if execution['case_id']!=case['id'] or receipt['case_id']!=case['id']:
+            raise ValueError('Mismatched owned row identifiers')
+        recorded_sources,recorded_row=recorded_locations(execution,receipt,case['id'])
         if receipt['pid'] in pids:raise ValueError('Rows must have distinct workers')
         pids.add(receipt['pid'])
         if previous_end and previous_end>execution['started_utc']:raise ValueError('Timed workers overlapped')
@@ -44,7 +64,7 @@ def audit(output):
         if prefixes!=m['runtime'].get('runtime_prefixes'):raise ValueError('Runtime-prefix admission mismatch')
         for text in receipt['read_paths']:
             p=Path(text)
-            if p.is_relative_to(output/'sources') or p.is_relative_to(folder):continue
+            if p.is_relative_to(recorded_sources) or p.is_relative_to(recorded_row):continue
             if runtime_read_allowed(p,prefixes):continue
             raise ValueError(f'Unadmitted external data/source read: {p}')
         if case['kind']=='reference':
@@ -97,7 +117,7 @@ def audit(output):
         max_affine_reconstruction_difference=reconstruction,max_alternate_integrator_difference=worst_alternate,
         reference_J=reference['J'],reference_L2=reference['L2'],reference_degree_difference=reference['degree_difference'],
         all_numerical_diagnostics_pass=all(r['diagnostic_ok'] and r['reference_contained'] for r in rows),
-        producing_commit=m['producer_commit'])
+        producing_commit=m['producer_commit'],reporter_sha256=sha(Path(__file__)))
 
 
 def comparison(output):

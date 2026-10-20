@@ -1,0 +1,12 @@
+{
+  "files": [
+    {
+      "file": "heat1-l2-w128.pt",
+      "sha256": "514531c1d38d138b053de85842e4c4a92de0bc82a629d448437ad1c8b5028ba6",
+      "bytes": 139034,
+      "architecture": [2, 128, 128, 1],
+      "activation": "tanh after every hidden affine layer; linear output",
+      "dtype": "torch.float64"
+    }
+  ]
+}

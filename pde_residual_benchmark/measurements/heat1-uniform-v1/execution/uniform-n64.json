@@ -1,0 +1,23 @@
+{
+  "case_id": "uniform-n64",
+  "pid": 331870,
+  "returncode": 0,
+  "command": [
+    "/home/vincent/.venvs/nn-crown-benchmark/bin/python",
+    "-B",
+    "-W",
+    "ignore",
+    "-m",
+    "pde_residual_benchmark",
+    "_worker",
+    "uniform-n64",
+    "--campaign",
+    "/home/vincent/repos/.worktrees/NN_bounds_benchmarking-heat1-pde/pde_residual_benchmark/measurements/heat1-uniform-v1"
+  ],
+  "started_utc": "2026-10-20T11:02:02.409032+00:00",
+  "ended_utc": "2026-10-20T11:12:15.093614+00:00",
+  "child_cpu_s": 606.9702609999999,
+  "child_wall_s": 612.6897317143157,
+  "max_rss_kib": 314208,
+  "exact_child_wait4": true
+}

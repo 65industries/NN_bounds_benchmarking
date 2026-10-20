@@ -1,0 +1,23 @@
+{
+  "case_id": "uniform-n32",
+  "pid": 331059,
+  "returncode": 0,
+  "command": [
+    "/home/vincent/.venvs/nn-crown-benchmark/bin/python",
+    "-B",
+    "-W",
+    "ignore",
+    "-m",
+    "pde_residual_benchmark",
+    "_worker",
+    "uniform-n32",
+    "--campaign",
+    "/home/vincent/repos/.worktrees/NN_bounds_benchmarking-heat1-pde/pde_residual_benchmark/measurements/heat1-uniform-v1"
+  ],
+  "started_utc": "2026-10-20T10:59:23.868139+00:00",
+  "ended_utc": "2026-10-20T11:02:02.408491+00:00",
+  "child_cpu_s": 158.499564,
+  "child_wall_s": 158.54037477914244,
+  "max_rss_kib": 320244,
+  "exact_child_wait4": true
+}
