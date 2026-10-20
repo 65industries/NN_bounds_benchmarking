@@ -1,0 +1,73 @@
+{
+  "netbounds": {
+    "commit": "7835f105a6731bb6c133fd3d8ddcc243c1e9326b",
+    "url": "https://github.com/65industries/NetBounds-dev",
+    "original_sha256": {
+      "derivative_bounds/activation_bounds.py": "868bbe87caf82d41e599992618572ce26070683134c65ade5494ee1df9913ad2",
+      "derivative_bounds/common.py": "5aa1828e32f2e4338e8dc0e91781f50eebcb867ea8d662069f30e0516cf27798",
+      "derivative_bounds/first_order.py": "894495f0a7e2ffb121408225198a0eefd198b02891438eba095e7fecce44dc44",
+      "derivative_bounds/second_order.py": "aaa19a01b15d1232ca9925b37096aea53dc14366cfa229745779aa43c11404f4",
+      "derivative_bounds/third_order.py": "c18eb50b7ae70384804fd0bfab5d4dcb83d30407eec8a0588ee697e78e0c121b",
+      "derivative_bounds/fourth_order.py": "1d953c764e8b5c9d8ed8e4535e5a4bbaf6f6ae776f9a04d4c8e57d6c8f44b43c",
+      "derivative_centers/common.py": "69e46692996e9e552ece37706dc4d1aea08fbc1ac34f7f2c625ff9538525d78f",
+      "LICENSE": "ee60d394566c44db184f4ae8a2853975543fa0ff26f80860b902f26073268e0c"
+    },
+    "files": {
+      "derivative_bounds/activation_bounds.py": "868bbe87caf82d41e599992618572ce26070683134c65ade5494ee1df9913ad2",
+      "derivative_bounds/common.py": "5aa1828e32f2e4338e8dc0e91781f50eebcb867ea8d662069f30e0516cf27798",
+      "derivative_bounds/first_order.py": "e710c31f6b5445f36c24b6ae7eb2c33953b7cb47e3aa4424920e1f759267b376",
+      "derivative_bounds/second_order.py": "aaa19a01b15d1232ca9925b37096aea53dc14366cfa229745779aa43c11404f4",
+      "derivative_bounds/third_order.py": "c18eb50b7ae70384804fd0bfab5d4dcb83d30407eec8a0588ee697e78e0c121b",
+      "derivative_bounds/fourth_order.py": "8416da67fa06d1230f3f15aef090a0aca3b97f714ed429a23266adb2e0df1274",
+      "derivative_centers/common.py": "69e46692996e9e552ece37706dc4d1aea08fbc1ac34f7f2c625ff9538525d78f",
+      "LICENSE": "ee60d394566c44db184f4ae8a2853975543fa0ff26f80860b902f26073268e0c",
+      "derivative_bounds/__init__.py": "7f002311093b57c6dd8036c95a0d5e494c82dffed22b9ef9e412cde01a7f58d5",
+      "derivative_centers/__init__.py": "7f002311093b57c6dd8036c95a0d5e494c82dffed22b9ef9e412cde01a7f58d5"
+    },
+    "modifications": {
+      "derivative_bounds/first_order.py": {
+        "omitted_definitions": [
+          "FirstOrderValueDerivativeBoundsResult",
+          "compute_first_order_bounds_over_spatial_box",
+          "compute_value_and_first_derivative_bounds_over_spatial_box"
+        ],
+        "retained_source": "byte-preserved outside deleted definitions"
+      },
+      "derivative_bounds/fourth_order.py": {
+        "omitted_definitions": [
+          "WaveOperatorFourthCombinationsResult",
+          "compute_wave_operator_fourth_combinations",
+          "wave_operator_fourth_quartets"
+        ],
+        "retained_source": "byte-preserved outside deleted definitions"
+      },
+      "derivative_bounds/__init__.py": {
+        "replacement": "minimal initializer; no numerical implementation"
+      },
+      "derivative_centers/__init__.py": {
+        "replacement": "minimal initializer; no numerical implementation"
+      }
+    }
+  },
+  "partial_crown": {
+    "commit": "161377048ee92b4c09faf5ce41628168c7e01556",
+    "url": "https://github.com/fgirbal/partial_crown",
+    "original_sha256": {
+      "pinn_verifier/activations/activation_relaxations.py": "0e38ec5edbd3a64f3742dd68f7279465111cd06578e42ff5795db4a0a939054d",
+      "pinn_verifier/activations/tanh.py": "7098ba2dd00e5c04b2ea89592af564435111dd47ec5911f726ef0530422f458e",
+      "pinn_verifier/crown.py": "76772a4f583c75b3be272e9c891c75a164821213240a6ed07feaf4a70ca2669f",
+      "README.md": "2c47a657cc193b09938817dcfdca82653c1a8eb6a5eb57bd6e9b2adfe25adf93",
+      "setup.py": "310ff6a8eb4195500c4d7097bcedc4570aab54373e0892434ec3fe8149a2d1bc",
+      "requirements.txt": "f962ca0f309530568149caf968bd6b071bf3ba4af2a675869b25b91651c4b3f7"
+    },
+    "files": {
+      "pinn_verifier/activations/activation_relaxations.py": "0e38ec5edbd3a64f3742dd68f7279465111cd06578e42ff5795db4a0a939054d",
+      "pinn_verifier/activations/tanh.py": "7098ba2dd00e5c04b2ea89592af564435111dd47ec5911f726ef0530422f458e",
+      "pinn_verifier/crown.py": "76772a4f583c75b3be272e9c891c75a164821213240a6ed07feaf4a70ca2669f",
+      "README.md": "2c47a657cc193b09938817dcfdca82653c1a8eb6a5eb57bd6e9b2adfe25adf93",
+      "setup.py": "310ff6a8eb4195500c4d7097bcedc4570aab54373e0892434ec3fe8149a2d1bc",
+      "requirements.txt": "f962ca0f309530568149caf968bd6b071bf3ba4af2a675869b25b91651c4b3f7"
+    },
+    "modifications": {}
+  }
+}

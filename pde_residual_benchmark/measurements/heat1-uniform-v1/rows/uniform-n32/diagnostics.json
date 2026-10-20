@@ -1,0 +1,54 @@
+{
+  "policy": "Post-freeze observations; never repair or replace native output",
+  "points_checked": 9216,
+  "observations": {
+    "Ft": {
+      "strict_excess_count": 0,
+      "tolerance_excess_count": 0,
+      "max_signed_excess": -0.0026207776915436742,
+      "tolerance": 1e-09
+    },
+    "Fxx": {
+      "strict_excess_count": 0,
+      "tolerance_excess_count": 0,
+      "max_signed_excess": -0.0026980330037145173,
+      "tolerance": 1e-09
+    },
+    "residual": {
+      "strict_excess_count": 0,
+      "tolerance_excess_count": 0,
+      "max_signed_excess": -0.003158931022136713,
+      "tolerance": 1e-09
+    }
+  },
+  "native_replays": [
+    {
+      "index": 0,
+      "native_replay_pass": true,
+      "max_absolute_difference": 0.0,
+      "primitive_audit_pass": true,
+      "primitive_records": 1280
+    },
+    {
+      "index": 512,
+      "native_replay_pass": true,
+      "max_absolute_difference": 0.0,
+      "primitive_audit_pass": true,
+      "primitive_records": 1280
+    },
+    {
+      "index": 1023,
+      "native_replay_pass": true,
+      "max_absolute_difference": 0.0,
+      "primitive_audit_pass": true,
+      "primitive_records": 1280
+    }
+  ],
+  "own_row_gauss64_J": 4.001960432102522,
+  "shared_output_scalar_ablation_J": [
+    3.695301526850079,
+    4.326980031233023
+  ],
+  "scalar_ablation": "Same native derivative outputs; not an independent benchmark row or timer",
+  "own_reference_contained": true
+}

@@ -1,0 +1,107 @@
+{
+  "integrity_pass": true,
+  "rows": [
+    {
+      "n": 8,
+      "cells": 64,
+      "J": [
+        3.2174077709065725,
+        4.904112596570919
+      ],
+      "L2": [
+        1.7937134026668176,
+        2.2145231081591628
+      ],
+      "L2_width": 0.4208097054923452,
+      "wall_s": 10.617554558441043,
+      "cpu_s": 10.616916392,
+      "child_wall_s": 13.36486553400755,
+      "child_cpu_s": 13.345494,
+      "diagnostic_ok": true,
+      "reference_contained": true,
+      "scalar_ablation_J": [
+        2.389160937024241,
+        6.119604571516923
+      ]
+    },
+    {
+      "n": 16,
+      "cells": 256,
+      "J": [
+        3.7942054823213924,
+        4.216260381794976
+      ],
+      "L2": [
+        1.947872039514247,
+        2.0533534478493896
+      ],
+      "L2_width": 0.10548140833514252,
+      "wall_s": 38.7740237666294,
+      "cpu_s": 38.76191144,
+      "child_wall_s": 41.37660638615489,
+      "child_cpu_s": 41.345667,
+      "diagnostic_ok": true,
+      "reference_contained": true,
+      "scalar_ablation_J": [
+        3.3170343260512243,
+        4.776333671940328
+      ]
+    },
+    {
+      "n": 32,
+      "cells": 1024,
+      "J": [
+        3.9492309728856463,
+        4.0547062967877405
+      ],
+      "L2": [
+        1.9872672122504427,
+        2.0136301290921677
+      ],
+      "L2_width": 0.02636291684172498,
+      "wall_s": 155.82592951785773,
+      "cpu_s": 155.787393711,
+      "child_wall_s": 158.54037477914244,
+      "child_cpu_s": 158.499564,
+      "diagnostic_ok": true,
+      "reference_contained": true,
+      "scalar_ablation_J": [
+        3.695301526850079,
+        4.326980031233023
+      ]
+    },
+    {
+      "n": 64,
+      "cells": 4096,
+      "J": [
+        3.9886558998067456,
+        4.015152492505078
+      ],
+      "L2": [
+        1.9971619613358216,
+        2.0037845424359073
+      ],
+      "L2_width": 0.006622581100085734,
+      "wall_s": 608.0109328748658,
+      "cpu_s": 603.495556125,
+      "child_wall_s": 612.6897317143157,
+      "child_cpu_s": 606.9702609999999,
+      "diagnostic_ok": true,
+      "reference_contained": true,
+      "scalar_ablation_J": [
+        3.858089638057559,
+        4.149945253286283
+      ]
+    }
+  ],
+  "cells_checked": 5440,
+  "distinct_worker_pids": 5,
+  "max_affine_reconstruction_difference": 1.7763568394002505e-15,
+  "max_alternate_integrator_difference": 5.551115123125783e-17,
+  "reference_J": 4.001960432102522,
+  "reference_L2": 2.0004900479888725,
+  "reference_degree_difference": 0.0,
+  "all_numerical_diagnostics_pass": true,
+  "producing_commit": "41c0ef1f4582357602236c02b51721d008826931",
+  "reporter_sha256": "522042ec863eac056d828cfe8ab922dc3cde45618c7ec2ad4d2616e6bbdc4138"
+}
