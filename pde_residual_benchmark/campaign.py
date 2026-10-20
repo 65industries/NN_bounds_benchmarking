@@ -39,6 +39,32 @@ def write(path,value):
         json.dump(value,f,indent=2,allow_nan=False);f.write('\n')
 
 
+def failure_clocks(method_start,method_end,phase_start,observed):
+    """Completed numerical work stays frozen even when later diagnostics fail."""
+    end=observed if method_end is None else method_end
+    return dict(elapsed_method_cpu_s=None if method_start is None else end[0]-method_start[0],
+        elapsed_method_wall_s=None if method_start is None else end[1]-method_start[1],
+        method_completed=method_end is not None,
+        failure_phase_cpu_s=observed[0]-phase_start[0],failure_phase_wall_s=observed[1]-phase_start[1])
+
+
+def runtime_read_allowed(path,prefixes=None):
+    """Admit installed executable sources, named package metadata and devices only.
+
+    Never admit arbitrary site-packages data or external .jsonl/.log journals.
+    This evidence/read policy is not a security sandbox for malicious code.
+    """
+    path=Path(path)
+    if str(path) in ('/dev/null','/dev/urandom'):return True
+    if len(path.parts)==4 and path.parts[1]=='proc' and path.parts[2].isdigit() and path.name=='maps':return True
+    prefixes=prefixes or (sys.prefix,sys.base_prefix)
+    if not any(path.is_relative_to(Path(p).resolve()) for p in prefixes):return False
+    if path.suffix in ('.py','.pyc','.so','.pyd','.zip') or '.so.' in path.name:return True
+    metadata={'METADATA','PKG-INFO','entry_points.txt','top_level.txt','namespace_packages.txt',
+              'direct_url.json','WHEEL','RECORD','INSTALLER','REQUESTED'}
+    return path.name in metadata and any(p.endswith(('.dist-info','.egg-info')) for p in path.parts)
+
+
 def runtime():
     global _THREAD_LIMITER
     import numpy,scipy,torch,threadpoolctl
@@ -51,7 +77,7 @@ def runtime():
     pools=threadpoolctl.threadpool_info()
     if torch.get_num_threads()!=1 or torch.get_num_interop_threads()!=1 or any(p['num_threads']!=1 for p in pools):
         raise RuntimeError('Effective numerical thread count must be one')
-    return dict(versions=versions,python=sys.version,executable=sys.executable,
+    return dict(versions=versions,python=sys.version,executable=sys.executable,runtime_prefixes=[sys.prefix,sys.base_prefix],
         torch_threads=torch.get_num_threads(),torch_interop_threads=torch.get_num_interop_threads(),threadpools=pools,
         platform=list(os.uname()),
         host=socket.gethostname(),cpu_affinity=sorted(os.sched_getaffinity(0)),load_average=list(os.getloadavg()))
@@ -83,12 +109,8 @@ def install_read_guard(campaign,row,original_root):
         if path.suffix=='.pt' and path!=snapshot/CHECKPOINT:
             raise PermissionError(f'Unselected checkpoint read: {path}')
         if path.is_relative_to(snapshot) or path.is_relative_to(row):return
-        forbidden=[original_root/'results',original_root/'pde_residual_benchmark/inputs/retained_heat1',
-                   original_root/'pde_residual_benchmark/measurements',campaign/'rows']
-        if any(path.is_relative_to(p) for p in forbidden) and not path.is_relative_to(row):
-            raise PermissionError(f'Independent numerical worker cannot read other results: {path}')
-        if any(path.is_relative_to(p) for p in (ROOT/'results',ROOT/'pde_residual_benchmark/inputs/retained_heat1')):
-            raise PermissionError(f'Frozen numerical worker cannot read comparator numerics: {path}')
+        if not runtime_read_allowed(path):
+            raise PermissionError(f'Independent numerical worker cannot read unadmitted external data/source: {path}')
     sys.addaudithook(guard)
     return reads
 
@@ -157,7 +179,8 @@ def worker(case_id,campaign):
     reads=install_read_guard(campaign,row,Path(manifest['original_root']))
     def interrupted(signum,frame):raise KeyboardInterrupt(f'Owned worker received signal {signum}')
     signal.signal(signal.SIGTERM,interrupted)
-    started=now();journals=[];arrays={};method_start=None
+    started=now();journals=[];arrays={};method_start=None;method_end=None
+    phase='loading_and_setup';phase_start=(time.process_time(),time.perf_counter())
     try:
         effective=runtime()
         import numpy as np
@@ -168,9 +191,12 @@ def worker(case_id,campaign):
         loaded=load_heat1();model=loaded.model
         if sha(ROOT/CHECKPOINT)!=CHECKPOINT_SHA:raise RuntimeError('Wrong selected checkpoint')
         method_start=(time.process_time(),time.perf_counter())
+        phase='numerical';phase_start=method_start
         if case['kind']=='reference':
             values={str(d):gauss_reference(model,d) for d in case['degrees']}
-            cpu=time.process_time()-method_start[0];wall=time.perf_counter()-method_start[1]
+            method_end=(time.process_time(),time.perf_counter())
+            cpu=method_end[0]-method_start[0];wall=method_end[1]-method_start[1]
+            phase='serialization';phase_start=method_end
             numerical=dict(case=case,checkpoint_sha256=CHECKPOINT_SHA,producer_commit=manifest['producer_commit'],
                 degrees=values,J=values['64'],L2=math.sqrt(values['64']),degree_difference=abs(values['32']-values['64']),
                 cpu_s=cpu,wall_s=wall,status='complete',reference_kind='Informal original-forward nested-input-autograd Gauss-Legendre')
@@ -185,7 +211,9 @@ def worker(case_id,campaign):
                 if (i+1)%256==0:print(f'{case_id}: {i+1}/{case["cells"]} cells',flush=True)
             J=[math.fsum(x[k] for x in integrals) for k in ('lower_square','upper_square')]
             L2=[math.sqrt(x) for x in J]
-            cpu=time.process_time()-method_start[0];wall=time.perf_counter()-method_start[1]
+            method_end=(time.process_time(),time.perf_counter())
+            cpu=method_end[0]-method_start[0];wall=method_end[1]-method_start[1]
+            phase='serialization';phase_start=method_end
             numerical=dict(case=case,checkpoint_sha256=CHECKPOINT_SHA,producer_commit=manifest['producer_commit'],
                 J=J,L2=L2,L2_width=L2[1]-L2[0],method_cpu_s=cpu,method_wall_s=wall,
                 native_cells_attempted=kernel.calls,native_subsolves=sum(len(j['completed_stages']) for j in journals),
@@ -201,10 +229,12 @@ def worker(case_id,campaign):
             with (row/'native_calls.jsonl').open('x') as stream:
                 for entry in journals:stream.write(json.dumps(entry,allow_nan=False,separators=(',',':'))+'\n')
             frozen={p.name:sha(p) for p in row.iterdir() if p.is_file()}
+            phase='postfreeze_diagnostics';phase_start=(time.process_time(),time.perf_counter())
             diagnostics=row_diagnostics(model,arrays,kernel)
             diagnostics['own_reference_contained']=J[0]<=diagnostics['own_row_gauss64_J']<=J[1]
             if any(sha(row/name)!=digest for name,digest in frozen.items()):raise RuntimeError('Diagnostics mutated native evidence')
             write(row/'diagnostics.json',diagnostics)
+        phase='receipt';phase_start=(time.process_time(),time.perf_counter())
         write(row/'receipt.json',dict(case_id=case_id,pid=os.getpid(),started_utc=started,ended_utc=now(),
             checkpoint=loaded.metadata,runtime=effective,read_paths=sorted(reads),sources_verified=True,
             read_policy='No other row, retained comparator, historical result, or nonselected checkpoint reads',
@@ -212,6 +242,7 @@ def worker(case_id,campaign):
         print(json.dumps(numerical,allow_nan=False),flush=True)
     except BaseException:
         error=traceback.format_exc()
+        observed=(time.process_time(),time.perf_counter())
         # A failing native call retains its attempted box and completed stages.
         def safe(v):
             if isinstance(v,float) and not math.isfinite(v):return {'nonfinite_float':repr(v)}
@@ -219,7 +250,8 @@ def worker(case_id,campaign):
             if isinstance(v,(list,tuple)):return [safe(w) for w in v]
             return v
         write(row/'failure.json',dict(case=case,error=error,attempted_calls=safe(journals),
-            started_utc=started,failed_utc=now(),elapsed_method_cpu_s=None if method_start is None else time.process_time()-method_start[0]))
+            started_utc=started,failed_utc=now(),failure_phase=phase,
+            **failure_clocks(method_start,method_end,phase_start,observed)))
         print(error,file=sys.stderr,flush=True)
         raise
 

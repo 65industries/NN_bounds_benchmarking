@@ -40,7 +40,7 @@ All-cell affine reconstruction, geometry, original-call journals, global reducti
 ## Tests
 
 ```bash
-/path/to/python -B -m pytest -q -p no:cacheprovider tests pde_residual_benchmark/test_heat1.py
+/path/to/python -B -m pytest -q -p no:cacheprovider tests pde_residual_benchmark/test_heat1.py pde_residual_benchmark/test_review_fixes.py
 /path/to/python -B -m reproducers.heat_reproduce verify
 ```
 

@@ -8,7 +8,7 @@ import math
 import os
 from pathlib import Path
 import numpy as np
-from .campaign import ROOT,sha,load,case_matrix
+from .campaign import ROOT,sha,load,case_matrix,runtime_read_allowed
 from .core import CHECKPOINT_SHA
 from independent_benchmark.minimal_affine_l2_native import cell_integrals
 from independent_benchmark.affine_l2 import cell_square_integral
@@ -39,14 +39,14 @@ def audit(output):
         for name,digest in receipt['artifact_sha256'].items():
             if sha(folder/name)!=digest:raise ValueError('Row mutated after freeze')
         if any(p['num_threads']!=1 for p in receipt['runtime']['threadpools']):raise ValueError('Thread mismatch')
-        # Screen recorded dataset reads; no retained or other-row payload may be consumed.
+        # Screen EVERY recorded external read, including .jsonl/.log journals.
+        prefixes=receipt['runtime'].get('runtime_prefixes')
+        if prefixes!=m['runtime'].get('runtime_prefixes'):raise ValueError('Runtime-prefix admission mismatch')
         for text in receipt['read_paths']:
             p=Path(text)
-            if p.suffix in ('.pt','.npz','.npy','.json','.csv','.pkl'):
-                if p.is_relative_to(output/'sources') or p.is_relative_to(folder):continue
-                # Python/NumPy package initialization may read installed distribution metadata.
-                if 'site-packages' in p.parts and (p.name=='direct_url.json' or p.name=='namespace_packages.txt'):continue
-                raise ValueError(f'Unadmitted numerical/data read: {p}')
+            if p.is_relative_to(output/'sources') or p.is_relative_to(folder):continue
+            if runtime_read_allowed(p,prefixes):continue
+            raise ValueError(f'Unadmitted external data/source read: {p}')
         if case['kind']=='reference':
             if r['degree_difference']>1e-10:raise ValueError('Reference degree self-check did not converge')
             continue
